@@ -15,6 +15,7 @@ public class NeedleRotation : MonoBehaviour
 
     //TODO: need reference to mouse cursor position; temporarily done by public reference
     public GameObject mouseCursor;
+    public GameObject mouseCursorPrefab;
     
 
     public Quaternion defaultRotation = Quaternion.Euler(new Vector3(0, 0, -90));
@@ -26,6 +27,12 @@ public class NeedleRotation : MonoBehaviour
 
         //remember that the needle hitbox is in the child
         col = this.GetComponentInChildren<Collider2D>();
+
+        //TODO: finds a mouse pointer or instantiates one if necessary
+        if (mouseCursor == null)
+        {
+            mouseCursor = GameObject.Instantiate(mouseCursorPrefab);
+        }
     }
 
     void Update()
