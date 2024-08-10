@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 403422759040382330}
   - component: {fileID: 2585674664303911159}
   - component: {fileID: 1345549503420055086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Needle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &4122912452654218670
