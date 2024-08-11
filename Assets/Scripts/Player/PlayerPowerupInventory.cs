@@ -8,6 +8,8 @@ public class PlayerPowerupInventory : MonoBehaviour
     public bool needleUnlocked = true;
     public GameObject needlePrefab;
 
+    public bool propelUnlocked = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,10 @@ public class PlayerPowerupInventory : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool HasPropelUnlocked()
+    {
+        return propelUnlocked;
     }
 }

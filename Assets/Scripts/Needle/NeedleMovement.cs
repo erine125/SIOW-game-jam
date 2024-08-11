@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class NeedleMovement : MonoBehaviour
 {
-    public float throwingForce = 700.0f;
     public float recallSpeed = 10.0f;
 
     NeedleState needleState;
@@ -30,7 +29,7 @@ public class NeedleMovement : MonoBehaviour
     }
 
     //throw needle in its current direction
-    public void ThrowNeedle()
+    public void ThrowNeedle(float throwingForce)
     {
         if (!needleState.IsEquipped())
         {

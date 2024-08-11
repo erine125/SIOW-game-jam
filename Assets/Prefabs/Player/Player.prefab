@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needle: {fileID: 0}
+  throwingForce: 350
 --- !u!114 &4292287585466077967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,3 +211,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needleUnlocked: 1
   needlePrefab: {fileID: 77980522465328453, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
+  propelUnlocked: 1
