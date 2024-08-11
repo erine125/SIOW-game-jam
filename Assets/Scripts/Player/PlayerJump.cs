@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
     Rigidbody2D rb;
     CapsuleCollider2D col;
 
-
+    PlayerNeedle playerNeedle;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class PlayerJump : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         col = this.GetComponent<CapsuleCollider2D>();
 
+        playerNeedle = this.GetComponent<PlayerNeedle>();
     }
 
     // Update is called once per frame
@@ -33,9 +34,11 @@ public class PlayerJump : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpPower);
 
             }
+
+            //reset throwing force if player is grounded so they can propel at max force again
+            playerNeedle.ResetThrowingForce();
         }
 
-        
     }
 
     //checks if player is grounded by performing a raycast to see if there's a ground right below them
@@ -46,6 +49,7 @@ public class PlayerJump : MonoBehaviour
         // A bit below the bottom
         float fullDistance = col.bounds.extents.y + 0.1f - col.bounds.extents.x;
 
-        return Physics2D.CapsuleCast(this.transform.position, col.size, col.direction, 0, Vector2.down, fullDistance, groundWallLayer);
+        //Note: did 95% of collider's size in case the side's are already touching walls
+        return Physics2D.CapsuleCast(this.transform.position, col.size * 0.95f, col.direction, 0, Vector2.down, fullDistance, groundWallLayer);
     }
 }
