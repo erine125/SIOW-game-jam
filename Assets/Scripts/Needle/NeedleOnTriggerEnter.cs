@@ -23,6 +23,12 @@ public class NeedleOnTriggerEnter : MonoBehaviour
 
 
         groundWall_layer = LayerMask.NameToLayer("GroundWall");
+
+        //check if needle is equipped and turn off collider beforehand
+        if (needleState.IsEquipped())
+        {
+            col.enabled = false;
+        }
     }
 
     // Update is called once per frame
