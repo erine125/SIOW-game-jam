@@ -57,11 +57,17 @@ public class PlayerNeedle : MonoBehaviour
         }
         */
         //RMB to throw needle but also, if player is mid-air, player is propelled in opposite direction at same time
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (playerPowerupInventory.HasPropelUnlocked() && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (needleState.IsEquipped() && !this.GetComponent<PlayerJump>().IsGrounded())
+            if (needleState.IsEquipped())
             {
+                if (!this.GetComponent<PlayerJump>().IsGrounded())
                 PropelNeedle();
+            }
+            //RMB when needle is unequipped will recall as well
+            else
+            {
+                RecallNeedle();
             }
         }
         
