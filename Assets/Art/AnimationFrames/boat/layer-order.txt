@@ -1,0 +1,8 @@
+layering from front to back
+
+boat-1-fg
+boat-2-fg
+player & NPCs
+boat-3-bg
+NPC captain to trap in ship
+boat-4-bg
