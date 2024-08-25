@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPowerupInventory : MonoBehaviour
 {
     //TODO: This script will track what powerups player has unlocked
+    //TODO: consider how to make this work with save files (as in permanently remember a powerup is unlocked)
     public bool needleUnlocked = true;
     public GameObject needlePrefab;
 
