@@ -38,6 +38,33 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bg-4
+    uniqueID: 2481857281
+    locked: 0
+  - name: bg-3
+    uniqueID: 3589387561
+    locked: 0
+  - name: bg-2-windows
+    uniqueID: 537494923
+    locked: 0
+  - name: bg-1
+    uniqueID: 2861361305
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: fg-4
+    uniqueID: 3031739415
+    locked: 0
+  - name: fg-3
+    uniqueID: 2243118971
+    locked: 0
+  - name: fg-2-lights
+    uniqueID: 3863766865
+    locked: 0
+  - name: fg-1
+    uniqueID: 4083153581
+    locked: 0
+  - name: fg-0
+    uniqueID: 2727608043
     locked: 0
