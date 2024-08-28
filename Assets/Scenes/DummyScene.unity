@@ -1062,6 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needle: {fileID: 1760106739}
+  throwingForce: 700
 --- !u!1 &1760106732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   mouseCursor: {fileID: 1413609892}
+  mouseCursorPrefab: {fileID: 0}
   defaultRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
 --- !u!114 &1760106738
 MonoBehaviour:
@@ -1240,7 +1242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b9d49cd0fbc4380a42c75b394294ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwingForce: 700
   recallSpeed: 10
 --- !u!50 &1760106740
 Rigidbody2D:

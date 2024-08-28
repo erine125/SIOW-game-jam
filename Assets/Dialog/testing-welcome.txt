@@ -1,0 +1,5 @@
+1	Madeline	Hello there traveler! Welcome to the world! Do you have any questions?			2	3
+	You	How do I jump?			4	
+	You	Nope, I'm good!				
+	Madeline	You can jump by pressing space. Have a good day!			5	
+	You	Okay, thanks, bye!				
