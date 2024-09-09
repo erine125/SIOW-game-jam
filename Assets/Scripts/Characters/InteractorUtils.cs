@@ -7,6 +7,22 @@ public enum Talkitiveness
     Talkitive
 }
 
+public static class SpeechUtil
+{
+    public static void Action(string code, Interactor interactor)
+    {
+        switch (code)
+        {
+            case "MakeQuiet":
+                interactor.Talkitiveness = Talkitiveness.Quiet;
+                break;
+            case "MakeReluctant":
+                interactor.Talkitiveness = Talkitiveness.Reluctant;
+                break;
+        }
+    }
+}
+
 /**
 Speech Asset Format
 - Must be a txt file but formatted as a TSV.
@@ -16,9 +32,10 @@ Speech Asset Format
 - You cannot have loops
 - Each row should be of the same form, with the columns as follows:
     1) The interaction tree ID, empty for non-root nodes
-    2) The speaker in the interaction
-    3) The actual speech text
-    4) Action code, happens after the text and before the choices
-    5) Show choices flag (True to show choices, False to auto-continue)
-  >=6) ID numbers for next dialog options
- */
+    2) The speaker
+    3) The text
+    4) The color of the text, hex code (e.g. #FF00FF for purple)
+    5) Action code, can be any string, happens after the user clicks to go next
+  >=6) ID numbers for next dialog options (up to 4 choice). (Line numbers are
+       the same as is shown in google sheets for a given row.)
+*/

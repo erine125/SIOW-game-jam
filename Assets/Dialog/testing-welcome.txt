@@ -1,5 +1,5 @@
-1	Madeline	Hello there traveler! Welcome to the world! Do you have any questions?			2	3
-	You	How do I jump?			4	
-	You	Nope, I'm good!				
-	Madeline	You can jump by pressing space. Have a good day!			5	
-	You	Okay, thanks, bye!				
+1	Madeline	Hello there traveler! Welcome to the world! Do you have any questions?	#005500		2	3
+	You	How do I jump?	#FF00BD		4	
+	You	Nope, I'm good!	#FF00BD	MakeReluctant		
+	Madeline	You can jump by pressing space. Have a good day!	#005500		5	
+	You	Okay, thanks, bye!	#FF00BD	MakeReluctant		

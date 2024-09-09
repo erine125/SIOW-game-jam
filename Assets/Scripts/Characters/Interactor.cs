@@ -24,7 +24,7 @@ public class Interactor : MonoBehaviour
     {
         if (!manager.InDialog() && distanceToPlayer() <= SpeechRange)
         {
-            if (Talkitiveness == Talkitiveness.Quiet && Input.GetKeyDown(KeyCode.C))
+            if (Talkitiveness == Talkitiveness.Reluctant && Input.GetKeyDown(KeyCode.C))
             {
                 manager.TryToStartDialog(speechTrees[ActiveTree], this);
             }

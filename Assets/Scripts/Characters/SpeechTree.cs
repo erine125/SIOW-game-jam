@@ -7,10 +7,10 @@ public class SpeechTree
 {
 	public int InteractionId;
 
-	private Node root;
+	private SpeechNode root;
 
 
-	SpeechTree(int interactionId, Node root)
+	SpeechTree(int interactionId, SpeechNode root)
 	{
 		this.InteractionId = interactionId;
 		this.root = root;
@@ -21,6 +21,11 @@ public class SpeechTree
 		return "--INTERACTION #" + InteractionId + "--" + root.PrintableString(0);
 	}
 
+	internal SpeechNode GetRoot ()
+	{
+		return root;
+	}
+
 
 	public static Dictionary<int, SpeechTree> FromTextAsset (TextAsset asset)
 	{
@@ -29,7 +34,7 @@ public class SpeechTree
 		string[] rawLines = asset.ToString().Split("\n");
 		string[][] splitLines = new string[rawLines.Length][];
 
-		List<Node> roots = new List<Node>();
+		List<SpeechNode> roots = new List<SpeechNode>();
 
 		for (int i = 0; i < rawLines.Length; i++)
 		{
@@ -37,14 +42,14 @@ public class SpeechTree
 			if (splitLines[i][0] != "")
 			{
 				int interactionId = int.Parse(splitLines[i][0]);
-				Node rootNode = new Node(i+1, DataFromSplitLine(splitLines[i]));
+				SpeechNode rootNode = new SpeechNode(i+1, DataFromSplitLine(splitLines[i]));
 
 				roots.Add(rootNode);
 				dict.Add(interactionId, new SpeechTree(interactionId, rootNode));
 			}
 		}
 
-		foreach (Node node in roots)
+		foreach (SpeechNode node in roots)
 		{
 			GetChildrenForNode(node, splitLines, 1);
 		}
@@ -52,7 +57,7 @@ public class SpeechTree
 		return dict;
 	}
 
-	private static void GetChildrenForNode (Node node, string[][] splitLines, int depth)
+	private static void GetChildrenForNode (SpeechNode node, string[][] splitLines, int depth)
 	{
 		if (depth > 16)
 		{
@@ -70,42 +75,42 @@ public class SpeechTree
 			}
 			int childId = int.Parse(splitLine[i]);
 
-            Node child = new Node(childId, DataFromSplitLine(splitLines[childId-1]));
+            SpeechNode child = new SpeechNode(childId, DataFromSplitLine(splitLines[childId-1]));
 			node.AddChild(child);
 			GetChildrenForNode(child, splitLines, depth + 1);
 		}
     }
 
-	private static NodeData DataFromSplitLine(string[] splitLine)
+	private static SpeechNodeData DataFromSplitLine(string[] splitLine)
 	{
-		return new NodeData(splitLine[1], splitLine[2], splitLine[3], splitLine[4]);
+		return new SpeechNodeData(splitLine[1], splitLine[2], splitLine[3], splitLine[4]);
 	}
 }
 
-class Node
+class SpeechNode
 {
 	private int id;
 	public int GetId() { return id; }
 
-	private NodeData data;
-	public NodeData GetData() { return data; }
+	private SpeechNodeData data;
+	public SpeechNodeData GetData() { return data; }
 
-	private List<Node> children;
+	private List<SpeechNode> children;
 	public int GetChildCount() { return children.Count; }
-	public Node GetChildAt(int idx) { return children[idx]; }
-	public void AddChild(Node child) { children.Add(child); }
+	public SpeechNode GetChildAt(int idx) { return children[idx]; }
+	public void AddChild(SpeechNode child) { children.Add(child); }
 
-	public Node (int id, NodeData data)
+	public SpeechNode (int id, SpeechNodeData data)
 	{
 		this.id = id;
 		this.data = data;
-		children = new List<Node>();
+		children = new List<SpeechNode>();
 	}
 
 	public string PrintableString (int depth)
 	{
 		string result = "\n" + new string('\t', depth) + data.PrintableString();
-		foreach (Node child in children)
+		foreach (SpeechNode child in children)
 		{
 			result += child.PrintableString(depth + 1);
 		}
@@ -113,19 +118,19 @@ class Node
 	}
 }
 
-struct NodeData
+struct SpeechNodeData
 {
 	public string speaker;
 	public string text;
-	public string action;
-	public string showChoices;
+    public string color;
+    public string action;
 
-	public NodeData (string speaker, string text, string action, string showChoices)
+	public SpeechNodeData (string speaker, string text, string color, string action)
 	{
 		this.speaker = speaker.Replace('%', ',');
 		this.text = text.Replace('%', ',');
-		this.action = action.Replace('%', ',');
-		this.showChoices = showChoices.Replace('%', ',');
+		this.color = color.Replace('%', ',');
+        this.action = action.Replace('%', ',');
 	}
 
 	public string PrintableString ()
