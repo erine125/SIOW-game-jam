@@ -19,13 +19,26 @@ public static class SpeechUtil
             case "MakeReluctant":
                 interactor.Talkitiveness = Talkitiveness.Reluctant;
                 break;
+            case "MakeTalkitive":
+                interactor.Talkitiveness = Talkitiveness.Talkitive;
+                break;
+            case "Hide":
+                interactor.Visible = false;
+                break;
+            case "Show":
+                interactor.Visible = true;
+                break;
         }
+
+        interactor.ChangedState ();
     }
 }
 
 /**
 Speech Asset Format
 - Must be a txt file but formatted as a TSV.
+    - The name before the extension needs to uniquely identify the interactor,
+      in other words, don't repeat names
 - Each row represents one node. The ID of a node is its row number.
 - Nodes can have multiple parents. 
 - If a node has no children, it ends the conversation

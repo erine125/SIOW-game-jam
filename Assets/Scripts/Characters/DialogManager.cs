@@ -154,6 +154,8 @@ public class DialogManager : MonoBehaviour
         else
         {
             // TODO - enable player movement and similar
+
+            RefreshAllInteractors();
         }
     }
 
@@ -235,6 +237,16 @@ public class DialogManager : MonoBehaviour
     private void ApplyFormattingAndPrint()
     {
         textRenderer.text = "<color=" + activeNode.GetData().color + ">" + preformattingPrinted + "</color>";
+    }
+
+    private void RefreshAllInteractors()
+    {
+        // TODO - refresh all the interactors in the scene
+    }
+
+    private void RefreshMasterState ()
+    {
+
     }
 }
 

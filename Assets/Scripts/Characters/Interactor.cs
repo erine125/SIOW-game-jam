@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    [Header("Speech Basics")]
+    [Header("Speech State")]
+    // when these are changed, you should call "ChangedState"
     public Talkitiveness Talkitiveness;
     public float SpeechRange = 1f;
-    public TextAsset SpeechAsset;
     public int ActiveTree = 1;
+    public bool Visible = false;
+
+    [Header("Speech Description")]
+    public string Name;
+    public TextAsset SpeechAsset;
 
     private Dictionary<int, SpeechTree> speechTrees;
     private DialogManager manager;
+    private SpriteRenderer spriteRenderer;
     
-    public void Awake()
+    public void Awake ()
     {
         speechTrees = SpeechTree.FromTextAsset(SpeechAsset);
+        Name = SpeechAsset.name;
 
         manager = FindAnyObjectByType<DialogManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Update()
+    public void Update ()
     {
         if (!manager.InDialog() && distanceToPlayer() <= SpeechRange)
         {
@@ -33,9 +41,16 @@ public class Interactor : MonoBehaviour
                 manager.TryToStartDialog(speechTrees[ActiveTree], this);
             }
         }
+
+        spriteRenderer.enabled = Visible;
     }
 
-    private float distanceToPlayer()
+    public void ChangedState ()
+    {
+        MasterState.Get().SetInteractorState(this);
+    }
+
+    private float distanceToPlayer ()
     {   
         return Mathf.Sqrt(
             Mathf.Pow(manager.GetPlayer().transform.position.x - transform.position.x, 2) +

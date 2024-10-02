@@ -1755,6 +1755,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1465415499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1465415501}
+  - component: {fileID: 1465415500}
+  m_Layer: 0
+  m_Name: MasterState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1465415500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465415499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b07e8552d03c478d85cac6126734f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1465415501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465415499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06906915, y: -0.007761005, z: -0.010126929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592887217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,8 +1898,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Talkitiveness: 2
   SpeechRange: 3
-  SpeechAsset: {fileID: 4900000, guid: b67e349ac2bc947f0a4419c535d3f574, type: 3}
   ActiveTree: 1
+  Visible: 1
+  Name: 
+  SpeechAsset: {fileID: 4900000, guid: b67e349ac2bc947f0a4419c535d3f574, type: 3}
 --- !u!1 &1820511996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,3 +2036,4 @@ SceneRoots:
   - {fileID: 692101789}
   - {fileID: 1592887219}
   - {fileID: 1820511999}
+  - {fileID: 1465415501}
