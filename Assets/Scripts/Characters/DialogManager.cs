@@ -150,10 +150,12 @@ public class DialogManager : MonoBehaviour
         if (locking)
         {
             // TODO - disable player movement and similar
+            PlayerRun.receivePlayerMovementInput = false;
         }
         else
         {
             // TODO - enable player movement and similar
+            PlayerRun.receivePlayerMovementInput = true;
 
             RefreshAllInteractors();
         }

@@ -9,6 +9,7 @@ public class PlayerRun : MonoBehaviour
     public float acceleration = 1.0f; //decides how quickly player increases speed
     public float decceleration = 2.0f; //decides how quickly player slows down when too fast or wanting to stop
 
+    public static bool receivePlayerMovementInput = true; //tells us if player should receive inputs to move or not
 
     Rigidbody2D rb;
     float targetXVelocity = 0.0f;
@@ -38,13 +39,17 @@ public class PlayerRun : MonoBehaviour
     {
         xDirectionInput = 0;
 
-        if (Input.GetKey(KeyCode.A))
+        //only update target velocity direction if player is allowed to receive movement inputs; otherwise its goal is zero-velocity
+        if (receivePlayerMovementInput)
         {
-            xDirectionInput -= 1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            xDirectionInput += 1;
+            if (Input.GetKey(KeyCode.A))
+            {
+                xDirectionInput -= 1;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                xDirectionInput += 1;
+            }
         }
 
         targetXVelocity = xDirectionInput * maxSpeed;

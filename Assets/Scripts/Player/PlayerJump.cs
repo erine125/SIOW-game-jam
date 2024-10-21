@@ -24,8 +24,8 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (IsGrounded())
+        //only consider jumping as an option if player is allowed to receive player movement inputs & is currently grounded
+        if (PlayerRun.receivePlayerMovementInput && IsGrounded())
         {
             //if grounded, you can jump with spacebar
             if (Input.GetKeyDown(KeyCode.Space))
