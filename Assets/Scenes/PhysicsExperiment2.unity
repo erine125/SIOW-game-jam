@@ -26985,28 +26985,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1374604054293891926, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
-      propertyPath: maxSpeed
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374604054293891926, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
-      propertyPath: acceleration
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374604054293891926, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: decceleration
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4292287585466077967, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: propelUnlocked
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913502350387851405, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
-      propertyPath: jumpPower
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552423448974407449, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
-      propertyPath: throwingForce
-      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7736974621993441411, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27047,10 +27031,6 @@ PrefabInstance:
     - target: {fileID: 7736974621993441411, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7870602840530261809, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
-      propertyPath: m_GravityScale
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8920479047526667322, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: m_Name
