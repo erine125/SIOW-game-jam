@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374604054293891926, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: acceleration
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4913502350387851405, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
       propertyPath: jumpPower
