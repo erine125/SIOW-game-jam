@@ -12,6 +12,8 @@ public class PlayerJump : MonoBehaviour
 
     PlayerNeedle playerNeedle;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class PlayerJump : MonoBehaviour
         col = this.GetComponent<CapsuleCollider2D>();
 
         playerNeedle = this.GetComponent<PlayerNeedle>();
+        animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class PlayerJump : MonoBehaviour
             {
                 //Note: I applied a force instead of editing the y velocity
                 rb.AddForce(Vector3.up * jumpPower);
+                animator.SetBool("isJumping", true);
 
             }
 
