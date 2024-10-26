@@ -7,11 +7,13 @@ public class PlayerOneWayPlatform : MonoBehaviour
     GameObject currentOneWayPlatform;
 
     Collider2D col;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         col = this.GetComponent<CapsuleCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
             if (currentOneWayPlatform != null)
             {
                 StartCoroutine(DisableCollision());
+                animator.Play("Fall", 0, 0f);
             }
         }
     }

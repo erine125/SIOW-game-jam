@@ -26,8 +26,6 @@ public class MouseTracker : MonoBehaviour
         worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
         worldPosition.z = 0;
 
-        Debug.Log(worldPosition);
-
         //follow the position of the mouse
         this.transform.position = worldPosition;
 
