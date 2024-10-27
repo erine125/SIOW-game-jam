@@ -45,11 +45,6 @@ public class Interactor : MonoBehaviour
         spriteRenderer.enabled = Visible;
     }
 
-    public void ChangedState ()
-    {
-        MasterState.Get().SetInteractorState(this);
-    }
-
     private float distanceToPlayer ()
     {   
         return Mathf.Sqrt(

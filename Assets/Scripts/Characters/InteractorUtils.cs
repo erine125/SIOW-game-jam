@@ -11,26 +11,12 @@ public static class SpeechUtil
 {
     public static void Action(string code, Interactor interactor)
     {
-        switch (code)
+        if (code.Length > 5 && code.Substring (0, 5) == "State")
         {
-            case "MakeQuiet":
-                interactor.Talkitiveness = Talkitiveness.Quiet;
-                break;
-            case "MakeReluctant":
-                interactor.Talkitiveness = Talkitiveness.Reluctant;
-                break;
-            case "MakeTalkitive":
-                interactor.Talkitiveness = Talkitiveness.Talkitive;
-                break;
-            case "Hide":
-                interactor.Visible = false;
-                break;
-            case "Show":
-                interactor.Visible = true;
-                break;
+            // Math.Round(char.GetNumericValue(code[5]))
+            int number = int.Parse(code.Substring(5));
+            MasterState.Get().UpdateState((GameState) number);
         }
-
-        interactor.ChangedState ();
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // There should only be one 
 public class MasterState : MonoBehaviour
@@ -11,6 +12,19 @@ public class MasterState : MonoBehaviour
         return instance;
     }
 
+    private DialogManager manager;
+
+    private GameState state;
+    public GameState GetState ()
+    {
+        return state;
+    }
+
+    private bool hasBeenCalled;
+
+
+    // Triggers
+
     void Awake ()
     {
         if (instance != null)
@@ -20,24 +34,39 @@ public class MasterState : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoad;
     }
 
-
-    // Add game state below here
-
-    public Dictionary<string, InteractorDetails> interactors = new Dictionary<string, InteractorDetails>();
-
-
-    // Utility methods
-
-    public void SetInteractorState (Interactor interactor)
+    public void OnSceneLoad (Scene scene, LoadSceneMode mode)
     {
-        interactors.Remove(interactor.Name);
-        interactors.Add(interactor.Name,
-            new InteractorDetails(interactor.Talkitiveness,
-                                  interactor.SpeechRange,
-                                  interactor.ActiveTree,
-                                  interactor.Visible));
+        HandleSceneInteractors ();
+        manager = FindAnyObjectByType<DialogManager>();
+    }
+
+    public void UpdateState (GameState state)
+    {
+        if (state != this.state)
+        {
+            hasBeenCalled = false;
+        }
+
+        this.state = state;
+        HandleSceneInteractors ();
+    }
+
+    private void HandleSceneInteractors ()
+    {
+        // TODO - logic to determine interactor state goes here
+    }
+
+    public void PossiblyTriggerPhoneCall (int triggerStateId)
+    {
+        if ((GameState) triggerStateId == state && !hasBeenCalled)
+        {
+            manager.TryToStartPhoneCall ();
+            hasBeenCalled = false;
+        }
     }
 
 }
@@ -59,3 +88,16 @@ public struct InteractorDetails
     }
 }
 
+public enum GameState
+{
+    BEGINNING = 0,
+    AFTER_GETTING_NEEDLES = 1,
+    STARTED_LIBRARY_QUEST = 2,
+    FINISHED_LIBRARY_QUEST = 3,
+    STARTED_BAKERY_QUEST = 4,
+    FINISHED_BAKERY_QUEST = 5,
+    AFTER_TALKING_TO_INDY = 6,
+    STARTED_MOUNTAIN_QUEST = 7,
+    FINISHED_SHRINE_SCENE = 8,
+    AFTER_GRANDMA_FUNERAL = 9
+}
