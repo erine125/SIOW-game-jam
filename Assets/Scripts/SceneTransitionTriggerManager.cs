@@ -8,17 +8,18 @@ public class SceneTransitionTriggerManager : MonoBehaviour
 
     public string nextSceneName;
     public string buildingExitSpawnPoint;
+    public bool needsInteract = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isPlayerInTrigger = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Check if the player is in the trigger and interaction is required
+        if (isPlayerInTrigger && needsInteract && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerSceneTransition();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -26,13 +27,34 @@ public class SceneTransitionTriggerManager : MonoBehaviour
         // Check if the colliding object has the tag "Player"
         if (col.CompareTag("Player"))
         {
+            isPlayerInTrigger = true;
 
-            if (nextSceneName == "Ext-Pier")
+            // If interaction is not required, trigger the scene transition immediately
+            if (!needsInteract)
             {
-                GameStateManager.Instance.SetLastBuilding(buildingExitSpawnPoint);
+                TriggerSceneTransition();
             }
-            // Load the specified scene
-            SceneManager.LoadScene(nextSceneName);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        // Reset the trigger flag when the player exits
+        if (col.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false;
+        }
+    }
+
+    private void TriggerSceneTransition()
+    {
+        // Set the last building if applicable
+        if (nextSceneName == "Ext-Pier")
+        {
+            GameStateManager.Instance.SetLastBuilding(buildingExitSpawnPoint);
+        }
+
+        // Load the specified scene
+        SceneManager.LoadScene(nextSceneName);
     }
 }

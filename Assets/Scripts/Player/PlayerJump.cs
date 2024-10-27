@@ -61,10 +61,10 @@ public class PlayerJump : MonoBehaviour
     {
 
         
-        if (!Mathf.Approximately(rb.velocity.y, 0))
-        {
-            return false;
-        }
+        //if (!Mathf.Approximately(rb.velocity.y, 0))
+        //{
+        //    return false;
+        //}
 
         Ray ray = new(col.bounds.center, Vector3.down);
 
