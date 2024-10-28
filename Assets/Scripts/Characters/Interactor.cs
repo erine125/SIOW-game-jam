@@ -30,7 +30,6 @@ public class Interactor : MonoBehaviour
 
     public void Update ()
     {
-
         if (!manager.InDialog() && distanceToPlayer() <= SpeechRange)
         {
             if (Talkitiveness == Talkitiveness.Reluctant && Input.GetKeyDown(KeyCode.E))

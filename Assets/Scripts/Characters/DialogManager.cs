@@ -30,7 +30,9 @@ public class DialogManager : MonoBehaviour
         mode = DlgMode.Inactive;
         player = GameObject.Find("Player");
         dialogBoxRenderer = GetComponent<SpriteRenderer>();
+        dialogBoxRenderer.sortingLayerName = "fg-0";
         textRenderer = GetComponentInChildren<TextMeshPro>();
+        textRenderer.sortingLayerID = dialogBoxRenderer.sortingLayerID;
         optionStrings = new string[4];
     }
 
