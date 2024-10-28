@@ -29,13 +29,14 @@ public class MasterState : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning ("MasterState already had an instance.");
+            Debug.LogWarning ("MasterState already had an instance, not creating another.");
         }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        SceneManager.sceneLoaded += OnSceneLoad;
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoad;
+        }
     }
 
     public void OnSceneLoad (Scene scene, LoadSceneMode mode)
