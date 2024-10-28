@@ -30,6 +30,7 @@ public class Interactor : MonoBehaviour
 
     public void Update ()
     {
+
         if (!manager.InDialog() && distanceToPlayer() <= SpeechRange)
         {
             if (Talkitiveness == Talkitiveness.Reluctant && Input.GetKeyDown(KeyCode.C))
@@ -43,11 +44,6 @@ public class Interactor : MonoBehaviour
         }
 
         spriteRenderer.enabled = Visible;
-    }
-
-    public void ChangedState ()
-    {
-        MasterState.Get().SetInteractorState(this);
     }
 
     private float distanceToPlayer ()

@@ -16,6 +16,8 @@ public class PlayerNeedle : MonoBehaviour
     float maxThrowingForce;
 
     Rigidbody2D rigid;
+    Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class PlayerNeedle : MonoBehaviour
         maxThrowingForce = throwingForce;
 
         rigid = this.GetComponent<Rigidbody2D>();
+        animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class PlayerNeedle : MonoBehaviour
             if (needleState.IsEquipped())
             {
                 ThrowNeedle();
+                animator.SetTrigger("isThrowing");
             }
             else
             {

@@ -15,11 +15,16 @@ public class PlayerRun : MonoBehaviour
     float targetXVelocity = 0.0f;
     int xDirectionInput = 0;
 
+    SpriteRenderer sr;
+    Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        sr = this.GetComponent<SpriteRenderer>();
+        animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,11 +50,21 @@ public class PlayerRun : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 xDirectionInput -= 1;
+                sr.flipX = false;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 xDirectionInput += 1;
+                sr.flipX = true;
             }
+        }
+
+        if (xDirectionInput == 0)
+        {
+            animator.SetBool("keyDown", false);
+        } else
+        {
+            animator.SetBool("keyDown", true);
         }
 
         targetXVelocity = xDirectionInput * maxSpeed;
@@ -80,6 +95,8 @@ public class PlayerRun : MonoBehaviour
 
 
         rb.velocity = updatedVelocity;
+        animator.SetFloat("horizVelocity", Mathf.Abs(updatedVelocity.x));   
+        animator.SetFloat("vertVelocity", updatedVelocity.y);
     }
 
     

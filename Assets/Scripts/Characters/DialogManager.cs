@@ -136,9 +136,21 @@ public class DialogManager : MonoBehaviour
             DialogLock(true);
 
             Texture2D tex = Texture2D.whiteTexture;
-            dialogBoxRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
+            dialogBoxRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width-0.5f, tex.height), Vector2.zero, 4);
 
             PrepareWriting();
+        }
+    }
+
+    public void TryToStartPhoneCall ()
+    {
+        if (!InDialog ())
+        {
+            mode = DlgMode.ShowingPhone;
+
+            DialogLock (true);
+            
+            // TODO - do the rest of the phone call
         }
     }
 
@@ -149,15 +161,11 @@ public class DialogManager : MonoBehaviour
     {
         if (locking)
         {
-            // TODO - disable player movement and similar
             PlayerRun.receivePlayerMovementInput = false;
         }
         else
         {
-            // TODO - enable player movement and similar
             PlayerRun.receivePlayerMovementInput = true;
-
-            RefreshAllInteractors();
         }
     }
 
@@ -240,16 +248,6 @@ public class DialogManager : MonoBehaviour
     {
         textRenderer.text = "<color=" + activeNode.GetData().color + ">" + preformattingPrinted + "</color>";
     }
-
-    private void RefreshAllInteractors()
-    {
-        // TODO - refresh all the interactors in the scene
-    }
-
-    private void RefreshMasterState ()
-    {
-
-    }
 }
 
 enum DlgMode
@@ -258,5 +256,7 @@ enum DlgMode
     Loading,
     Writing,
     WaitingNext,
-    WaitingChoice
+    WaitingChoice,
+
+    ShowingPhone
 }
