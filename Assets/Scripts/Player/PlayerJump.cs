@@ -27,7 +27,7 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rb.velocity.y);
+        //Debug.Log(rb.velocity.y);
         if (IsGrounded())
         {
             animator.SetBool("isGrounded", true);

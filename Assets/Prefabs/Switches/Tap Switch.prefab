@@ -144,4 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedObjects: []
+  defaultSprite: {fileID: 1687960464, guid: 2587a4c97e9b6814c9546341ad9b3153, type: 3}
+  pressedSprite: {fileID: 538114812, guid: 2587a4c97e9b6814c9546341ad9b3153, type: 3}
   switchTimer: 3
