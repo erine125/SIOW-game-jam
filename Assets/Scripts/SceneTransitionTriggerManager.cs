@@ -49,10 +49,8 @@ public class SceneTransitionTriggerManager : MonoBehaviour
     private void TriggerSceneTransition()
     {
         // Set the last building if applicable
-        if (nextSceneName == "Ext-Pier")
-        {
-            GameStateManager.Instance.SetLastBuilding(buildingExitSpawnPoint);
-        }
+        GameStateManager.Instance.SetLastBuilding(buildingExitSpawnPoint);
+        
 
         // Load the specified scene
         SceneManager.LoadScene(nextSceneName);

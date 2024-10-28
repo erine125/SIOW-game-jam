@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Switch : MonoBehaviour
+
 {
     bool turnedOn = false;
 
@@ -12,6 +13,9 @@ public class Switch : MonoBehaviour
 
     SpriteRenderer sprite;
     Color defaultColor;
+
+    public Sprite defaultSprite;
+    public Sprite pressedSprite;
 
     //TODO: don't just leave it to the player & needle; consider other sources that can trigger switch (ex: anything but walls/ground)
     //the layers that will trigger the switch
@@ -55,7 +59,7 @@ public class Switch : MonoBehaviour
     public void TurnOn()
     {
         turnedOn = true;
-        sprite.color = Color.green; //green indicates it's on
+        sprite.sprite = pressedSprite; // change sprite instead of color
 
         //turn off connected objects
         SetConnectedObjects(true);
@@ -67,7 +71,7 @@ public class Switch : MonoBehaviour
         SetConnectedObjects(false);
 
         turnedOn = false;
-        sprite.color = defaultColor; //return switch to original color
+        sprite.sprite = defaultSprite;  // Revert to default sprite
     }
 
     //set connected objects active/inactive based on whether switch is on or not
