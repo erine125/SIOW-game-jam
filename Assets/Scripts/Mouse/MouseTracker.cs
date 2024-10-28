@@ -20,7 +20,7 @@ public class MouseTracker : MonoBehaviour
     void LateUpdate()
     {
         screenPosition = Input.mousePosition;
-       
+        screenPosition.z = 10;
 
         //ignore the z part as it needs to be seen by camera
         worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
