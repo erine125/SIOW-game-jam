@@ -37,41 +37,47 @@ public class PlayerNeedle : MonoBehaviour
         //TODO: consider using infrastructure for keybinds/controls instead of just fixed keycodes
         //checks whether to throw or recall needle based on input
 
-        //LMB to throw/recall needle depending on if needle is equipped or not
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (PlayerRun.receivePlayerMovementInput)
         {
-            if (needleState.IsEquipped())
+
+
+
+            //LMB to throw/recall needle depending on if needle is equipped or not
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (needleState.IsEquipped())
+                {
+                    ThrowNeedle();
+                    animator.SetTrigger("isThrowing");
+                }
+                else
+                {
+                    RecallNeedle();
+                }
+            }
+            /*
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 ThrowNeedle();
-                animator.SetTrigger("isThrowing");
             }
-            else
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 RecallNeedle();
             }
-        }
-        /*
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            ThrowNeedle();
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            RecallNeedle();
-        }
-        */
-        //RMB to throw needle but also, if player is mid-air, player is propelled in opposite direction at same time
-        if (playerPowerupInventory.HasPropelUnlocked() && Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (needleState.IsEquipped())
+            */
+            //RMB to throw needle but also, if player is mid-air, player is propelled in opposite direction at same time
+            if (playerPowerupInventory.HasPropelUnlocked() && Input.GetKeyDown(KeyCode.Mouse1))
             {
-                if (!this.GetComponent<PlayerJump>().IsGrounded())
-                PropelNeedle();
-            }
-            //RMB when needle is unequipped will recall as well
-            else
-            {
-                RecallNeedle();
+                if (needleState.IsEquipped())
+                {
+                    if (!this.GetComponent<PlayerJump>().IsGrounded())
+                        PropelNeedle();
+                }
+                //RMB when needle is unequipped will recall as well
+                else
+                {
+                    RecallNeedle();
+                }
             }
         }
         
