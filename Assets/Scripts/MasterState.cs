@@ -20,8 +20,6 @@ public class MasterState : MonoBehaviour
         return state;
     }
 
-    private bool hasBeenCalled;
-
 
     // Triggers
 
@@ -47,11 +45,6 @@ public class MasterState : MonoBehaviour
 
     public void UpdateState (GameState state)
     {
-        if (state != this.state)
-        {
-            hasBeenCalled = false;
-        }
-
         this.state = state;
         HandleSceneInteractors ();
     }
@@ -61,13 +54,9 @@ public class MasterState : MonoBehaviour
         // TODO - logic to determine interactor state goes here
     }
 
-    public void PossiblyTriggerPhoneCall (int triggerStateId)
+    public void PossiblyTriggerPhoneCall (Texture2D[] phoneTextures)
     {
-        if ((GameState) triggerStateId == state && !hasBeenCalled)
-        {
-            manager.TryToStartPhoneCall ();
-            hasBeenCalled = false;
-        }
+        manager.TryToStartPhoneCall (phoneTextures);
     }
 
 }
