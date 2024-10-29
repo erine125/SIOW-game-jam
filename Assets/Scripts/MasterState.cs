@@ -14,13 +14,13 @@ public class MasterState : MonoBehaviour
 
     private DialogManager manager;
 
-    private GameState state;
-    public GameState GetState ()
+    public int state; // making this public for debugging only, IMPORTANT: don't update directly, use UpdateState()
+    public int GetState ()
     {
         return state;
     }
 
-    Dictionary<string, InteractorDetails> interactorDetails;
+    Dictionary<string, InteractorDetails> interactorDetails; // lasts until state is changed
 
     // Triggers
 
@@ -42,15 +42,217 @@ public class MasterState : MonoBehaviour
         manager = FindAnyObjectByType<DialogManager>();
     }
 
-    public void UpdateState (GameState state)
+    public void UpdateState (int state)
     {
         this.state = state;
+        interactorDetails.Clear ();
         HandleSceneInteractors ();
     }
 
     private void HandleSceneInteractors ()
     {
-        // TODO - logic to determine interactor state goes here
+        Interactor[] arr = GameObject.FindObjectsByType<Interactor> (FindObjectsSortMode.None);
+
+        foreach (Interactor a in arr)
+        {
+            if (!interactorDetails.ContainsKey (a.Name))
+            {
+                switch (a.Name)
+                {
+                    case "BoatRandos":
+                        a.Talkitiveness = (state == 0) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = state == 0;
+                        a.ActiveTree = 0;
+                        break;
+                    case "Scarlett-LibraryLobby":
+                        if (state < 5)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 1;
+                        }
+                        else if (state == 5)
+                        {
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                            a.Visible = false;
+                        }
+                        else if (state < 11)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 6;
+                        }
+                        else
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 11;
+                        }
+                        break;
+                    case "LibraryArchivesDoor":
+                        if (state < 4)
+                        {
+                            a.Talkitiveness = Talkitiveness.Talkitive;
+                            a.Visible = true;
+                            a.ActiveTree = 1;
+                        }
+                        else
+                        {
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                            a.Visible = false;
+                        }
+                        break;
+                    case "Ginger-Bakery":
+                        a.Talkitiveness = Talkitiveness.Reluctant;
+                        a.Visible = true;
+                        a.ActiveTree = state < 4 ? 1 : 4;
+                        break;
+                    case "Grandma":
+                        a.ActiveTree = state;
+                        a.Visible = true;
+                        switch (state)
+                        {
+                            case 1:
+                                a.Talkitiveness = Talkitiveness.Talkitive;
+                                break;
+                            case 2:
+                                a.Talkitiveness = Talkitiveness.Reluctant;
+                                break;
+                            case 3:
+                                a.Talkitiveness = Talkitiveness.Talkitive;
+                                break;
+                            case 4:
+                                a.Talkitiveness = Talkitiveness.Reluctant;
+                                break;
+                            case 6:
+                                a.Talkitiveness = Talkitiveness.Talkitive;
+                                break;
+                            case 7:
+                                a.Talkitiveness = Talkitiveness.Reluctant;
+                                break;
+                            case 8:
+                                a.Talkitiveness = Talkitiveness.Talkitive;
+                                break;
+                            case 9:
+                                a.Talkitiveness = Talkitiveness.Reluctant;
+                                break;
+                            case 10:
+                                a.Talkitiveness = Talkitiveness.Talkitive;
+                                break;
+                            case 11:
+                                a.Talkitiveness = Talkitiveness.Reluctant;
+                                break;
+                        }
+                        break;
+                    case "GrandmasHouseExitDoor":
+                        if (state != 2 && state != 3)
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                        }
+                        else 
+                        {
+                            a.Visible = true;
+                            a.Talkitiveness = Talkitiveness.Talkitive;
+                            a.ActiveTree = 2;
+                        }
+                        break;
+                    case "Indy-Town":
+                        if (state < 4)
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                        }
+                        else if (state < 9)
+                        {
+                            a.Visible = true;
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.ActiveTree = 4;
+                        }
+                        else if (state < 11)
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                        }
+                        else
+                        {
+                            a.Visible = true;
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.ActiveTree = 11;
+                        }
+                        break;
+                    case "LibraryExitDoor":
+                        a.Talkitiveness = (state == 5) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = (state == 5);
+                        a.ActiveTree = 5;
+                        break;
+                    case "Scarlett-LibraryArchives":
+                        a.Talkitiveness = (state == 5) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = (state == 5);
+                        a.ActiveTree = 5;
+                        break;
+                    case "Bakers":
+                        if (state < 7)
+                        {
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                            a.Visible = false;
+                        }
+                        else if (state == 7)
+                        {
+                            a.Talkitiveness = Talkitiveness.Talkitive;
+                            a.ActiveTree = 7;
+                            a.Visible = true;
+                        }
+                        else if (state < 11)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.ActiveTree = 8;
+                            a.Visible = true;
+                        }
+                        else
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.ActiveTree = 11;
+                            a.Visible = true;
+                        }
+                        break;
+                    case "Indy-Sewer":
+                        if (state < 9)
+                        {
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                            a.Visible = false;
+                        }
+                        else if (state == 9)
+                        {
+                            a.Talkitiveness = Talkitiveness.Talkitive;
+                            a.Visible = true;
+                            a.ActiveTree = 10;
+                        }
+                        else if (state == 10)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 11;
+                        }
+                        else
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                        }
+                        break;
+                    case "ShrineStatue":
+                        a.Talkitiveness = state >= 11 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = state >= 11;
+                        a.ActiveTree = 11;
+                        break;
+                    case "MountainNPCs":
+                        a.Talkitiveness = state >= 12 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = state >= 12;
+                        a.ActiveTree = 12;
+                        break;
+                }
+            }       
+        }
     }
 
     public void PossiblyTriggerPhoneCall (Texture2D[] phoneTextures)
@@ -100,18 +302,4 @@ public struct InteractorDetails
         ActiveTree = interactor.ActiveTree;
         Visible = interactor.Visible;
     }
-}
-
-public enum GameState
-{
-    BEGINNING = 0,
-    AFTER_GETTING_NEEDLES = 1,
-    STARTED_LIBRARY_QUEST = 2,
-    FINISHED_LIBRARY_QUEST = 3,
-    STARTED_BAKERY_QUEST = 4,
-    FINISHED_BAKERY_QUEST = 5,
-    AFTER_TALKING_TO_INDY = 6,
-    STARTED_MOUNTAIN_QUEST = 7,
-    FINISHED_SHRINE_SCENE = 8,
-    AFTER_GRANDMA_FUNERAL = 9
 }

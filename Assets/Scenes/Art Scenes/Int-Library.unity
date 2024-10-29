@@ -107845,7 +107845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1931343135}
+  - {fileID: 2318605001149756866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1783029143
@@ -107864,8 +107864,7 @@ MonoBehaviour:
   SpeechRange: 3
   ActiveTree: 1
   Visible: 1
-  isItalic: 0
-  Name: Scarlett
+  Name: Scarlett-LibraryLobby
   SpeechAsset: {fileID: 4900000, guid: 8b675b23a67d3a04b8383b816b025de6, type: 3}
 --- !u!1 &1797693261
 GameObject:
@@ -108550,11 +108549,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1931343135 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2318605000873190549, guid: 52c94bac196ea8a48aef5fedfd11d606, type: 3}
-  m_PrefabInstance: {fileID: 1887703383}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1950418173
 GameObject:
   m_ObjectHideFlags: 0
@@ -109003,6 +108997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b07e8552d03c478d85cac6126734f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
 --- !u!4 &1998888469
 Transform:
   m_ObjectHideFlags: 0
@@ -110294,6 +110289,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1568529225}
   m_SourcePrefab: {fileID: 100100000, guid: 3282a63fcd25643239289d63338dcbce, type: 3}
+--- !u!4 &2318605001149756866 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2318605000873190549, guid: 52c94bac196ea8a48aef5fedfd11d606, type: 3}
+  m_PrefabInstance: {fileID: 1887703383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

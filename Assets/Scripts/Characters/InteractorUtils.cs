@@ -14,9 +14,8 @@ public static class SpeechUtil
     {
         if (code.Length > 5 && code.Substring (0, 5) == "State")
         {
-            // Math.Round(char.GetNumericValue(code[5]))
             int number = int.Parse(code.Substring(5));
-            MasterState.Get().UpdateState((GameState) number);
+            MasterState.Get().UpdateState(number);
         }
         else
         {
