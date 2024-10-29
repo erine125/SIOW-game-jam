@@ -10,7 +10,6 @@ public class Interactor : MonoBehaviour
     public float SpeechRange = 1f;
     public int ActiveTree = 1;
     public bool Visible = false;
-
     [Header("Speech Description")]
     public string Name;
     public TextAsset SpeechAsset;

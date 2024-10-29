@@ -1,0 +1,1 @@
+1	Warning Sign	<i>Looks like the road's blocked off. It's almost as though the devs haven't added this area yet...</i>	#005500	MakeReluctant		

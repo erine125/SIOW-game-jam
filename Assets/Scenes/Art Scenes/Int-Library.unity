@@ -2633,8 +2633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.3, y: 159}
-  m_SizeDelta: {x: 771.2212, y: 116.3712}
+  m_AnchoredPosition: {x: 0, y: 163.3}
+  m_SizeDelta: {x: 797.688, y: 208.1779}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559569367
 MonoBehaviour:
@@ -2656,7 +2656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ae2daf35e5a618849922423d28bd0527, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -107864,6 +107864,7 @@ MonoBehaviour:
   SpeechRange: 3
   ActiveTree: 1
   Visible: 1
+  isItalic: 0
   Name: Scarlett
   SpeechAsset: {fileID: 4900000, guid: 8b675b23a67d3a04b8383b816b025de6, type: 3}
 --- !u!1 &1797693261
@@ -108836,7 +108837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.768598, y: 159.13689}
+  m_AnchoredPosition: {x: 0, y: 167.90337}
   m_SizeDelta: {x: 732.3288, y: 102.1337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991901558
