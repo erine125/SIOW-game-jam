@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public enum Talkitiveness
 {
@@ -16,6 +17,23 @@ public static class SpeechUtil
             // Math.Round(char.GetNumericValue(code[5]))
             int number = int.Parse(code.Substring(5));
             MasterState.Get().UpdateState((GameState) number);
+        }
+        else
+        {
+            switch (code)
+            {
+                case "MakeTalkitive":
+                    interactor.Talkitiveness = Talkitiveness.Talkitive;
+                    break;
+                case "MakeReluctant":
+                    interactor.Talkitiveness = Talkitiveness.Reluctant;
+                    break;
+                case "MakeQuiet":
+                    interactor.Talkitiveness = Talkitiveness.Quiet;
+                    break;
+            }
+
+            MasterState.Get ().StoreUpdatedInteractor (interactor);
         }
     }
 }

@@ -35,11 +35,12 @@ public class DialogManager : MonoBehaviour
     private Texture2D[] phoneTextures;
     private int phoneTextureIndex;
 
+    private double lastDialog;
+
     void Awake()
     {
         mode = DlgMode.Inactive;
         player = GameObject.Find("Player");
-
 
         dialogBox = GameObject.Find("DialogBox").GetComponent<Image>();
         dialogText = GameObject.Find("DialogText").GetComponent<TextMeshProUGUI>();
@@ -56,6 +57,8 @@ public class DialogManager : MonoBehaviour
         {
             BackgroundTexture = Texture2D.whiteTexture;
         }
+    
+        lastDialog = 1;
     }
 
     void Update()
@@ -152,6 +155,11 @@ public class DialogManager : MonoBehaviour
                 }
                 break;
         }
+    
+        if (!InDialog () && lastDialog < 1)
+        {
+            lastDialog += Time.deltaTime;
+        }
     }
 
     public GameObject GetPlayer ()
@@ -166,7 +174,8 @@ public class DialogManager : MonoBehaviour
 
     public void TryToStartDialog (SpeechTree tree, Interactor interactor)
     {
-        if (!InDialog())
+        // Can't start conversation within 0.25sec of last one ending
+        if (!InDialog() && lastDialog > 0.25)
         {
             mode = DlgMode.Loading;
             activeTree = tree;
@@ -177,6 +186,7 @@ public class DialogManager : MonoBehaviour
 
             Texture2D tex = BackgroundTexture;
             dialogBox.enabled = true;
+            lastDialog = 0;
 
             PrepareWriting();
         }

@@ -18,6 +18,8 @@ public class Interactor : MonoBehaviour
     private DialogManager manager;
     private SpriteRenderer spriteRenderer;
     
+    private double lastSpoken;
+    
     public void Awake ()
     {
         speechTrees = SpeechTree.FromTextAsset(SpeechAsset);
@@ -25,11 +27,18 @@ public class Interactor : MonoBehaviour
 
         manager = FindAnyObjectByType<DialogManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        lastSpoken = 1.0;
+    }
+
+    public void Start ()
+    {
+        MasterState.Get ().AssignInteractorDetailsFromStored (this);
     }
 
     public void Update ()
     {
-        if (!manager.InDialog() && distanceToPlayer() <= SpeechRange)
+        if (!manager.InDialog() && distanceToPlayer() <= SpeechRange && lastSpoken > 0.5)
         {
             if (Talkitiveness == Talkitiveness.Reluctant && Input.GetKeyDown(KeyCode.E))
             {

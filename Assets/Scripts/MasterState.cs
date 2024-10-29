@@ -20,20 +20,19 @@ public class MasterState : MonoBehaviour
         return state;
     }
 
+    Dictionary<string, InteractorDetails> interactorDetails;
 
     // Triggers
 
     void Awake ()
     {
-        if (instance != null)
-        {
-            Debug.LogWarning ("MasterState already had an instance, not creating another.");
-        }
-        else
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoad;
+
+            interactorDetails = new Dictionary<string, InteractorDetails>();
         }
     }
 
@@ -59,6 +58,23 @@ public class MasterState : MonoBehaviour
         manager.TryToStartPhoneCall (phoneTextures);
     }
 
+    public void StoreUpdatedInteractor (Interactor interactor)
+    {
+        interactorDetails[interactor.name] = new InteractorDetails (interactor);
+    }
+
+    public void AssignInteractorDetailsFromStored (Interactor interactor)
+    {
+        if (interactorDetails.ContainsKey (interactor.name))
+        {
+            InteractorDetails dets = interactorDetails[interactor.name];
+            interactor.Talkitiveness = dets.Talkitiveness;
+            interactor.SpeechRange = dets.SpeechRange;
+            interactor.ActiveTree = dets.ActiveTree;
+            interactor.Visible = dets.Visible;
+        }
+    }
+
 }
 
 public struct InteractorDetails
@@ -75,6 +91,14 @@ public struct InteractorDetails
         SpeechRange = speechRange;
         ActiveTree = activeTree;
         Visible = visible;
+    }
+
+    public InteractorDetails (Interactor interactor)
+    {
+        Talkitiveness = interactor.Talkitiveness;
+        SpeechRange = interactor.SpeechRange;
+        ActiveTree = interactor.ActiveTree;
+        Visible = interactor.Visible;
     }
 }
 
