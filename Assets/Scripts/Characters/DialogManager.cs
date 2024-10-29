@@ -80,7 +80,7 @@ public class DialogManager : MonoBehaviour
                 break;
             case DlgMode.WaitingNext:
 
-                if (Input.GetMouseButtonDown (0))
+                if (Input.GetMouseButtonDown (0) || Input.anyKeyDown)
                 {
                     if (activeNode.GetData().action != "")
                     {
