@@ -7,11 +7,13 @@ public class DialogManager : MonoBehaviour
 {
     public float CharacterPrintDelay = 0.35f;
     public string SelectedChoiceColor = "black";
+    public Texture2D BackgroundTexture;
 
     // references
     private GameObject player;
     private SpriteRenderer dialogBoxRenderer;
     private TextMeshPro textRenderer;
+    private SpriteRenderer phoneRenderer;
 
     // high level state
     private DlgMode mode;
@@ -24,6 +26,8 @@ public class DialogManager : MonoBehaviour
     private string textToPrint;
     private float timeSinceChar;
     private string[] optionStrings;
+    private Texture2D[] phoneTextures;
+    private int phoneTextureIndex;
 
     void Awake()
     {
@@ -31,9 +35,23 @@ public class DialogManager : MonoBehaviour
         player = GameObject.Find("Player");
         dialogBoxRenderer = GetComponent<SpriteRenderer>();
         dialogBoxRenderer.sortingLayerName = "fg-0";
+
         textRenderer = GetComponentInChildren<TextMeshPro>();
         textRenderer.sortingLayerID = dialogBoxRenderer.sortingLayerID;
+
+        phoneRenderer = GetComponentInChildren<SpriteRenderer>();
+        phoneRenderer.sortingLayerName = "fg-0";
+
         optionStrings = new string[4];
+
+        if (BackgroundTexture == null)
+        {
+            BackgroundTexture = Texture2D.whiteTexture;
+        }
+        else
+        {
+            dialogBoxRenderer.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void Update()
@@ -111,7 +129,25 @@ public class DialogManager : MonoBehaviour
                     activeNode = activeNode.GetChildAt(choiceMouseOver);
                     PrepareWriting();
                 }
-
+                break;
+            case DlgMode.ShowingPhone:
+                if (Input.GetMouseButtonDown (0))
+                {
+                    phoneTextureIndex++;
+                    if (phoneTextureIndex >= phoneTextures.Length)
+                    {
+                        phoneTextures = null;
+                        phoneRenderer.sprite = null;
+                        mode = DlgMode.Inactive;
+                        DialogLock (false);
+                    }
+                    else
+                    {
+                        Texture2D tex = phoneTextures[phoneTextureIndex];
+                        phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
+                    }
+                    
+                }
                 break;
         }
     }
@@ -137,22 +173,26 @@ public class DialogManager : MonoBehaviour
 
             DialogLock(true);
 
-            Texture2D tex = Texture2D.whiteTexture;
+            Texture2D tex = BackgroundTexture;
             dialogBoxRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
 
             PrepareWriting();
         }
     }
 
-    public void TryToStartPhoneCall ()
+    public void TryToStartPhoneCall (Texture2D[] textures)
     {
         if (!InDialog ())
         {
             mode = DlgMode.ShowingPhone;
 
             DialogLock (true);
-            
-            // TODO - do the rest of the phone call
+
+            phoneTextureIndex = 0;
+            phoneTextures = textures;
+
+            Texture2D tex = textures[0];
+            phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
         }
     }
 
