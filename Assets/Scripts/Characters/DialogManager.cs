@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -11,9 +12,14 @@ public class DialogManager : MonoBehaviour
 
     // references
     private GameObject player;
-    private SpriteRenderer dialogBoxRenderer;
-    private TextMeshPro textRenderer;
-    private SpriteRenderer phoneRenderer;
+    //private SpriteRenderer dialogBoxRenderer;
+    //private TextMeshPro textRenderer;
+    //private SpriteRenderer phoneRenderer;
+
+    private Image dialogBox;
+    private TextMeshProUGUI dialogText;
+    private Image phone; 
+
 
     // high level state
     private DlgMode mode;
@@ -33,14 +39,16 @@ public class DialogManager : MonoBehaviour
     {
         mode = DlgMode.Inactive;
         player = GameObject.Find("Player");
-        dialogBoxRenderer = GetComponent<SpriteRenderer>();
-        dialogBoxRenderer.sortingLayerName = "fg-0";
 
-        textRenderer = GetComponentInChildren<TextMeshPro>();
-        textRenderer.sortingLayerID = dialogBoxRenderer.sortingLayerID;
 
-        phoneRenderer = GetComponentInChildren<SpriteRenderer>();
-        phoneRenderer.sortingLayerName = "fg-0";
+        dialogBox = GameObject.Find("DialogBox").GetComponent<Image>();
+        dialogText = GameObject.Find("DialogText").GetComponent<TextMeshProUGUI>();
+        phone = GameObject.Find("Phone").GetComponent<Image>();
+
+        dialogBox.enabled = false;
+        dialogText.text = "";
+        phone.enabled = false;
+
 
         optionStrings = new string[4];
 
@@ -48,15 +56,10 @@ public class DialogManager : MonoBehaviour
         {
             BackgroundTexture = Texture2D.whiteTexture;
         }
-        else
-        {
-            dialogBoxRenderer.transform.localScale = new Vector3(1, 1, 1);
-        }
     }
 
     void Update()
     {
-        Vector2 pos;
         switch (mode)
         {
             case DlgMode.Writing:
@@ -76,9 +79,8 @@ public class DialogManager : MonoBehaviour
                 }
                 break;
             case DlgMode.WaitingNext:
-                pos = RelativePercentMousePos();
-                if (pos.y > 0 && pos.y < 1 && pos.x > 0 && pos.x < 1
-                    && Input.GetMouseButtonDown (0))
+
+                if (Input.GetMouseButtonDown (0))
                 {
                     if (activeNode.GetData().action != "")
                     {
@@ -91,8 +93,8 @@ public class DialogManager : MonoBehaviour
                             activeTree = null;
                             activeInteractor = null;
                             activeNode = null;
-                            textRenderer.text = "";
-                            dialogBoxRenderer.sprite = null;
+                            dialogText.text = "";
+                            dialogBox.enabled = false;
 
                             mode = DlgMode.Inactive;
                             DialogLock(false);
@@ -137,14 +139,14 @@ public class DialogManager : MonoBehaviour
                     if (phoneTextureIndex >= phoneTextures.Length)
                     {
                         phoneTextures = null;
-                        phoneRenderer.sprite = null;
+                        phone.enabled = false;
                         mode = DlgMode.Inactive;
                         DialogLock (false);
                     }
                     else
                     {
                         Texture2D tex = phoneTextures[phoneTextureIndex];
-                        phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
+                        //phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
                     }
                     
                 }
@@ -174,7 +176,7 @@ public class DialogManager : MonoBehaviour
             DialogLock(true);
 
             Texture2D tex = BackgroundTexture;
-            dialogBoxRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
+            dialogBox.enabled = true;
 
             PrepareWriting();
         }
@@ -192,7 +194,7 @@ public class DialogManager : MonoBehaviour
             phoneTextures = textures;
 
             Texture2D tex = textures[0];
-            phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
+            //phoneRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero, 4);
         }
     }
 
@@ -215,50 +217,39 @@ public class DialogManager : MonoBehaviour
     {
         mode = DlgMode.Writing;
         preformattingPrinted = "";
-        textRenderer.text = "";
+        dialogText.text = "";
         textToPrint = activeNode.GetData().text;
         timeSinceChar = 0;
     }
 
-    private Vector2 RelativePercentMousePos()
-    {
-        Vector3 localPos = Camera.main.ScreenToWorldPoint(Input.mousePosition)
-            - dialogBoxRenderer.transform.position;
-        Vector2 scaledPos = new Vector2(
-            localPos.x / transform.localScale.x,
-            localPos.y / transform.localScale.y);
-        scaledPos.y = 1 - scaledPos.y;
+    //private Vector2 RelativePercentMousePos()
+    //{
+    //    Vector3 localPos = Camera.main.ScreenToWorldPoint(Input.mousePosition)
+    //        - dialogBoxRenderer.transform.position;
+    //    Vector2 scaledPos = new Vector2(
+    //        localPos.x / transform.localScale.x,
+    //        localPos.y / transform.localScale.y);
+    //    scaledPos.y = 1 - scaledPos.y;
 
-        return scaledPos;
-    }
+    //    return scaledPos;
+    //}
 
     /// <summary></summary>
     /// <returns>The index from top to bottom, otherwise -1</returns>
     private int ChoiceThatMouseIsOver()
     {
-        Vector2 pos = RelativePercentMousePos();
+        RectTransform dialogBoxRectTransform = dialogBox.GetComponent<RectTransform>();
+        Vector2 localMousePos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            dialogBoxRectTransform, Input.mousePosition, null, out localMousePos);
 
-        if (pos.x <= 0 || pos.x >= 1 || pos.y <= 0 || pos.y >= 1)
-        {
-            return -1;
-        }
-        
-        if (pos.y <= 0.25)
-        {
-            return 0;
-        }
-        else if (pos.y <= 0.5 && activeNode.GetChildCount() >= 2)
-        {
-            return 1;
-        }
-        else if (pos.y < 0.75 && activeNode.GetChildCount() >= 3)
-        {
-            return 2;
-        }
-        else if (activeNode.GetChildCount() >= 4)
-        {
-            return 3;
-        }
+        float height = dialogBoxRectTransform.rect.height;
+        float posY = Mathf.InverseLerp(0, height, -localMousePos.y);
+
+        if (posY < 0.25f) return 0;
+        if (posY < 0.5f && activeNode.GetChildCount() >= 2) return 1;
+        if (posY < 0.75f && activeNode.GetChildCount() >= 3) return 2;
+        if (posY <= 1f && activeNode.GetChildCount() >= 4) return 3;
 
         return -1;
     }
@@ -267,28 +258,28 @@ public class DialogManager : MonoBehaviour
     /// <param name="mouseIsOver">The index from top to bottom, otherwise -1</param>
     private void BuildOptionsString(int mouseIsOver)
     {
-        textRenderer.text = "";
+        dialogText.text = "";
         for (int i = 0; i < Mathf.Min(4, activeNode.GetChildCount()); i++)
         {
             if (i > 0)
             {
-                textRenderer.text += "\n";
+                dialogText.text += "\n";
             }
 
             if (mouseIsOver == i)
             {
-                textRenderer.text += "<color=" + SelectedChoiceColor + ">" + optionStrings[i] + "</color>";
+                dialogText.text += "<color=" + SelectedChoiceColor + ">" + optionStrings[i] + "</color>";
             }
             else
             {
-                textRenderer.text += optionStrings[i];
+                dialogText.text += optionStrings[i];
             }
         }
     }
 
     private void ApplyFormattingAndPrint()
     {
-        textRenderer.text = "<color=" + activeNode.GetData().color + ">" + preformattingPrinted + "</color>";
+        dialogText.text = "<color=" + activeNode.GetData().color + ">" + preformattingPrinted + "</color>";
     }
 }
 
