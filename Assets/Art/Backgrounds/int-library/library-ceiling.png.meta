@@ -151,6 +151,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: library-ceiling_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 862
+        width: 3712
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e718ec49e707b03499fadb13cc54be8a
+      internalID: -788226463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -164,6 +185,7 @@ TextureImporter:
     nameFileIdTable:
       int-library-1-fg-z0 1_0: 1529175898
       library-ceiling_0: -702745117
+      library-ceiling_1: -788226463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -92,11 +92,17 @@ public class MasterState : MonoBehaviour
                         a.ActiveTree = 0;
                         break;
                     case "Scarlett-LibraryLobby":
-                        if (state < 5)
+                        if (state <= 3)
                         {
                             a.Talkitiveness = Talkitiveness.Reluctant;
                             a.Visible = true;
                             a.ActiveTree = 1;
+                        }
+                        else if (state == 4)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 4;
                         }
                         else if (state == 5)
                         {

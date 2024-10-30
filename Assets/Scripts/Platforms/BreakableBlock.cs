@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BreakableBlock : MonoBehaviour
 {
+    private bool isBreaking = false; // keep a flag to prevent repeated triggers of the animation
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         
     }
 
@@ -25,10 +28,18 @@ public class BreakableBlock : MonoBehaviour
         if (needle != null)
         {
             //if needle is in the middle of recalling, then this block should break against this needle
-            if (needle.IsRecalling())
+            if (needle.IsRecalling() && !isBreaking)
             {
-                Destroy(this.gameObject);
+                isBreaking = true;
+                animator.SetTrigger("Break");
+                //Destroy(this.gameObject);
             }
         }
+    }
+
+    public void DestroyBlock()
+    {
+        Destroy(this.gameObject);
+        isBreaking = false;
     }
 }
