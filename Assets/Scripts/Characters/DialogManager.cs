@@ -18,7 +18,9 @@ public class DialogManager : MonoBehaviour
 
     private Image dialogBox;
     private TextMeshProUGUI dialogText;
-    private Image phone; 
+    private Image phone;
+    private Image nameBox;
+    private TextMeshProUGUI nameText;
 
 
     // high level state
@@ -46,9 +48,15 @@ public class DialogManager : MonoBehaviour
         dialogText = GameObject.Find("DialogText").GetComponent<TextMeshProUGUI>();
         phone = GameObject.Find("Phone").GetComponent<Image>();
 
+        nameBox = GameObject.Find("NameBox").GetComponent<Image>();
+        nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+
         dialogBox.enabled = false;
         dialogText.text = "";
         phone.enabled = false;
+
+        nameBox.enabled = false;
+        nameText.text = "";
 
 
         optionStrings = new string[4];
@@ -97,6 +105,8 @@ public class DialogManager : MonoBehaviour
                             activeInteractor = null;
                             activeNode = null;
                             dialogText.text = "";
+                            nameText.text = null;
+                            nameBox.enabled = false;
                             dialogBox.enabled = false;
 
                             mode = DlgMode.Inactive;
@@ -186,6 +196,7 @@ public class DialogManager : MonoBehaviour
 
             Texture2D tex = BackgroundTexture;
             dialogBox.enabled = true;
+            nameBox.enabled = true;
             lastDialog = 0;
 
             PrepareWriting();
@@ -289,6 +300,7 @@ public class DialogManager : MonoBehaviour
 
     private void ApplyFormattingAndPrint()
     {
+        nameText.text = activeNode.GetData().speaker;
         dialogText.text = "<color=" + activeNode.GetData().color + ">" + preformattingPrinted + "</color>";
     }
 }
