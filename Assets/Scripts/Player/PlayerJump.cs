@@ -10,6 +10,8 @@ public class PlayerJump : MonoBehaviour
     Rigidbody2D rb;
     CapsuleCollider2D col;
 
+    BoxCollider2D feetCollider;
+
     PlayerNeedle playerNeedle;
 
     Animator animator;
@@ -19,6 +21,8 @@ public class PlayerJump : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         col = this.GetComponent<CapsuleCollider2D>();
+
+        feetCollider = this.GetComponent<BoxCollider2D>();
 
         playerNeedle = this.GetComponent<PlayerNeedle>();
         animator = this.GetComponent<Animator>();
@@ -71,7 +75,6 @@ public class PlayerJump : MonoBehaviour
         //}
 
         //Note: Trying out alternate Raycasting method for more accurate conditions to jump
-        BoxCollider2D feetCollider = this.GetComponent<BoxCollider2D>();
         if (feetCollider != null)
         {
             float raycastDistance = 0.01f; //shift the box X distance downwards for raycast
