@@ -73,7 +73,7 @@ public class DialogManager : MonoBehaviour
         switch (mode)
         {
             case DlgMode.Writing:
-                timeSinceChar += Time.deltaTime;
+                timeSinceChar += Input.GetMouseButton(0) ? 4 * Time.deltaTime : Time.deltaTime;
 
                 if (textToPrint.Length > 0 && timeSinceChar >= CharacterPrintDelay)
                 {
