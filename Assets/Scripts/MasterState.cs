@@ -47,6 +47,7 @@ public class MasterState : MonoBehaviour
         this.state = state;
         interactorDetails.Clear ();
         HandleSceneInteractors ();
+
     }
 
     private void HandleSceneInteractors ()
@@ -249,6 +250,16 @@ public class MasterState : MonoBehaviour
                         a.Talkitiveness = state >= 12 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
                         a.Visible = state >= 12;
                         a.ActiveTree = 12;
+                        break;
+                    case "NeedlesAttic":
+                        if (state <= 2)
+                        {
+                            a.Visible = true;
+                        }
+                        else
+                        {
+                            a.Visible = false;
+                        }
                         break;
                 }
             }       
