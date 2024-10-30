@@ -1,0 +1,3 @@
+2	Magic Needles	<i>Grandma's trusty knitting needles. Essential to helping the townspeople with needlemancer magic. Ever since you were way too young to be handling sharp objects, you've watched Grandma command them with ease.</i>	#201411		2
+	Magic Needles	<b>Left click</b> to throw a needle. <b>Left click</b> again to magically recall it to you. The needle can pin down far away objects -- helpful for when you're in a pinch!	#201411		3
+	Magic Needles	<i>Like everything else in the attic, they're covered in a hefty layer of dust. You wonder how long it's been since Grandma felt well enough to do her magic, and it strikes you just how long you've been away.</i>	#201411	UpdateScene3	4

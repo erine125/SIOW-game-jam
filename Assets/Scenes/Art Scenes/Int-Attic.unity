@@ -8299,7 +8299,7 @@ Transform:
   m_GameObject: {fileID: 608176652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.218828, y: -5.62641, z: -10}
+  m_LocalPosition: {x: -29.020441, y: -5.62876, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12209,7 +12209,7 @@ GameObject:
   - component: {fileID: 945267785}
   - component: {fileID: 945267788}
   m_Layer: 0
-  m_Name: Needle Interactor
+  m_Name: NeedlesPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12322,7 +12322,7 @@ MonoBehaviour:
   ActiveTree: 1
   Visible: 1
   Name: 
-  SpeechAsset: {fileID: 0}
+  SpeechAsset: {fileID: 4900000, guid: b968e828fa4113d41b7f43f83c696700, type: 3}
 --- !u!1 &960176630
 GameObject:
   m_ObjectHideFlags: 0

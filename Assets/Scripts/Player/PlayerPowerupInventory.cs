@@ -10,12 +10,13 @@ public class PlayerPowerupInventory : MonoBehaviour
     public GameObject needlePrefab;
 
     public bool propelUnlocked = true;
+    private PlayerNeedle playerNeedle = null;
 
     // Start is called before the first frame update
     void Start()
     {
         //if needle powerup is unlocked, ensure player has a needle equipped (or create one as needed)
-        PlayerNeedle playerNeedle = this.GetComponent<PlayerNeedle>();
+        playerNeedle = this.GetComponent<PlayerNeedle>();
         if (needleUnlocked && playerNeedle.needle == null)
         {
             GameObject needleObject = GameObject.Instantiate(needlePrefab);
@@ -28,7 +29,13 @@ public class PlayerPowerupInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (needleUnlocked && playerNeedle.needle == null)
+        {
+            GameObject needleObject = GameObject.Instantiate(needlePrefab);
+            //make sure player and needle recognize each other as the wielder & weapon/needle accordingly
+            needleObject.GetComponent<NeedleState>().wielder = this.gameObject;
+            playerNeedle.needle = needleObject.GetComponent<NeedleMovement>();
+        }
     }
 
     public bool HasPropelUnlocked()
