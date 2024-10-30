@@ -50,7 +50,8 @@ public class Interactor : MonoBehaviour
             }
         }
 
-        spriteRenderer.enabled = Visible;
+        gameObject.SetActive(Visible);
+
     }
 
     private float distanceToPlayer ()
