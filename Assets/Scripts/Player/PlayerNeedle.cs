@@ -51,7 +51,7 @@ public class PlayerNeedle : MonoBehaviour
         {
 
             //LMB to throw/recall needle depending on if needle is equipped or not
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (playerPowerupInventory.HasNeedleUnlocked() && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (needleState.IsEquipped())
                 {

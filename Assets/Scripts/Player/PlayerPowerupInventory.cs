@@ -32,6 +32,11 @@ public class PlayerPowerupInventory : MonoBehaviour
         
     }
 
+    public bool HasNeedleUnlocked()
+    {
+        return needleUnlocked;
+    }
+
     public bool HasPropelUnlocked()
     {
         return propelUnlocked;
