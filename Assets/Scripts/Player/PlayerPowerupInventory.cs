@@ -29,13 +29,7 @@ public class PlayerPowerupInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (needleUnlocked && playerNeedle.needle == null)
-        {
-            GameObject needleObject = GameObject.Instantiate(needlePrefab);
-            //make sure player and needle recognize each other as the wielder & weapon/needle accordingly
-            needleObject.GetComponent<NeedleState>().wielder = this.gameObject;
-            playerNeedle.needle = needleObject.GetComponent<NeedleMovement>();
-        }
+        
     }
 
     public bool HasPropelUnlocked()

@@ -33,6 +33,21 @@ public class NeedleMovement : MonoBehaviour
     //throw needle in its current direction
     public void ThrowNeedle(float throwingForce)
     {
+        if (needleState == null)
+        {
+            needleState = GetComponent<NeedleState>(); // if needlestate was just instantiated we need to set it before we can throw
+        }
+
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        if (col == null)
+        {
+            col = GetComponent<Collider2D>();
+        }
+
         if (!needleState.IsEquipped())
         {
             print("Can't throw the needle if it's not equipped ya dummy");

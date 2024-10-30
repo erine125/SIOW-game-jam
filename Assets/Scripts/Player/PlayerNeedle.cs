@@ -23,7 +23,12 @@ public class PlayerNeedle : MonoBehaviour
     void Start()
     {
         playerPowerupInventory = this.GetComponent<PlayerPowerupInventory>();
-        needleState = needle.GetComponent<NeedleState>();
+
+
+        if (needle != null)
+        {
+            needleState = needle.GetComponent<NeedleState>();
+        }
 
         maxThrowingForce = throwingForce;
 
@@ -31,10 +36,15 @@ public class PlayerNeedle : MonoBehaviour
         animator = this.GetComponent<Animator>();
     }
 
+    public void SetNeedle(NeedleMovement newNeedle)
+    {
+        needle = newNeedle;
+        needleState = needle.GetComponent<NeedleState>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //TODO: consider using infrastructure for keybinds/controls instead of just fixed keycodes
         //checks whether to throw or recall needle based on input
 
         if (PlayerRun.receivePlayerMovementInput)

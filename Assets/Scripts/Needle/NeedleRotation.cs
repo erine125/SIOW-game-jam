@@ -28,6 +28,8 @@ public class NeedleRotation : MonoBehaviour
         //remember that the needle hitbox is in the child
         col = this.GetComponentInChildren<Collider2D>();
 
+        mouseCursor = GameObject.FindWithTag("MousePointer");
+
         //TODO: finds a mouse pointer or instantiates one if necessary
         if (mouseCursor == null)
         {
@@ -40,6 +42,10 @@ public class NeedleRotation : MonoBehaviour
         //face mouse cursor if needle is currently equipped to player; and rotate around player (or needle base) accordingly
         if (needleState.IsEquipped())
         {
+            if (mouseCursor == null)
+            {
+                mouseCursor = GameObject.Instantiate(mouseCursorPrefab);
+            }
             Quaternion facingRotation = GetRotationFacingTarget(mouseCursor.transform.position);
 
             //rotation is based on the cursor

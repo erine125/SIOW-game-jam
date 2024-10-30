@@ -17,6 +17,7 @@ public class Interactor : MonoBehaviour
     private Dictionary<int, SpeechTree> speechTrees;
     private DialogManager manager;
     private SpriteRenderer spriteRenderer;
+    private Collider2D col;
     
     private double lastSpoken;
     
@@ -27,6 +28,7 @@ public class Interactor : MonoBehaviour
 
         manager = FindAnyObjectByType<DialogManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
 
         lastSpoken = 1.0;
     }
@@ -50,7 +52,11 @@ public class Interactor : MonoBehaviour
             }
         }
 
-        gameObject.SetActive(Visible);
+        spriteRenderer.enabled = Visible;
+        if (col != null)
+        {
+            col.enabled = Visible;
+        }
 
     }
 

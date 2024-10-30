@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 // There should only be one 
 public class MasterState : MonoBehaviour
 {
+
+    public GameObject Player;
+    public GameObject needlePrefab;
+
     private static MasterState instance;
     public static MasterState Get ()
     {
@@ -34,6 +38,9 @@ public class MasterState : MonoBehaviour
             SceneManager.sceneLoaded += OnSceneLoad;
 
             interactorDetails = new Dictionary<string, InteractorDetails>();
+        } else
+        {
+            Debug.LogWarning("Master state exists already");
         }
     }
 
@@ -42,11 +49,24 @@ public class MasterState : MonoBehaviour
         manager = FindAnyObjectByType<DialogManager>();
         HandleSceneInteractors ();
         HandlePlayerAbilities ();
+        Debug.Log("State" + this.state);
     }
 
     public void UpdateState (int state)
     {
         this.state = state;
+
+        if (state == 3)
+        {
+                Debug.Log("updating to state 3");
+                PlayerNeedle playerNeedle = Player.GetComponent<PlayerNeedle>();
+                GameObject needleObject = GameObject.Instantiate(needlePrefab);
+                //make sure player and needle recognize each other as the wielder & weapon/needle accordingly
+                needleObject.GetComponent<NeedleState>().wielder = Player;
+                NeedleMovement needleMovement = needleObject.GetComponent<NeedleMovement>();
+                playerNeedle.SetNeedle(needleMovement);
+        }
+
         interactorDetails.Clear ();
         HandleSceneInteractors ();
         HandlePlayerAbilities ();
@@ -60,6 +80,7 @@ public class MasterState : MonoBehaviour
         {
             if (!interactorDetails.ContainsKey (a.Name))
             {
+                Debug.Log(a.Name);
                 switch (a.Name)
                 {
                     case "BoatRandos":
