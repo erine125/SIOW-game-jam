@@ -22,6 +22,7 @@ public class MasterState : MonoBehaviour
 
     Dictionary<string, InteractorDetails> interactorDetails; // lasts until state is changed
 
+
     // Triggers
 
     void Awake ()
@@ -38,8 +39,9 @@ public class MasterState : MonoBehaviour
 
     public void OnSceneLoad (Scene scene, LoadSceneMode mode)
     {
-        HandleSceneInteractors ();
         manager = FindAnyObjectByType<DialogManager>();
+        HandleSceneInteractors ();
+        HandlePlayerAbilities ();
     }
 
     public void UpdateState (int state)
@@ -47,7 +49,7 @@ public class MasterState : MonoBehaviour
         this.state = state;
         interactorDetails.Clear ();
         HandleSceneInteractors ();
-
+        HandlePlayerAbilities ();
     }
 
     private void HandleSceneInteractors ()
@@ -261,9 +263,27 @@ public class MasterState : MonoBehaviour
                             a.Visible = false;
                         }
                         break;
+                    case "Intro-Cutscene":
+                        a.Talkitiveness = (state == 0) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = (state == 0);
+                        a.ActiveTree = 0;
+                        break;
+                    case "NeedlesPickup":
+                        a.Talkitiveness = (state == 2) ? Talkitiveness.Reluctant : Talkitiveness.Quiet;
+                        a.Visible = (state == 2);
+                        a.ActiveTree = 2;
+                        break;
                 }
             }       
         }
+    }
+
+    private void HandlePlayerAbilities ()
+    {
+        GameObject playerObject = GameObject.Find("Player");
+        PlayerPowerupInventory inventory = playerObject.GetComponent<PlayerPowerupInventory>();
+        inventory.needleUnlocked = (state >= 3);
+        inventory.propelUnlocked = (state >= 11);
     }
 
     public void PossiblyTriggerPhoneCall (Texture2D[] phoneTextures)

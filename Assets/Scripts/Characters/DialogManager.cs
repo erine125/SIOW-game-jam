@@ -22,7 +22,6 @@ public class DialogManager : MonoBehaviour
     private Image nameBox;
     private TextMeshProUGUI nameText;
 
-
     // high level state
     private DlgMode mode;
     private SpeechTree activeTree;
