@@ -43,9 +43,13 @@ public class PlayerJump : MonoBehaviour
             //if grounded, you can jump with spacebar
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //Note: I applied a force instead of editing the y velocity
+                
                 animator.SetTrigger("isJumping");
                 animator.SetBool("isGrounded", false);
+
+                //Note: I applied a force instead of editing the y velocity
+                //Note 2: Decided to reset y velocity before jumping because sometimes the y velocity isn't immediately 0 when grounded
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector3.up * jumpPower);
                 
             }
