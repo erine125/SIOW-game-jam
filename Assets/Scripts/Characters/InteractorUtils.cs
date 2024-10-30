@@ -17,6 +17,11 @@ public static class SpeechUtil
             int number = int.Parse(code.Substring(5));
             MasterState.Get().UpdateState(number);
         }
+        else if (code.Length > 11 && code.Substring (0, 11) == "UpdateState")
+        {
+            int number = int.Parse(code.Substring(11));
+            MasterState.Get().UpdateState(number);
+        }
         else
         {
             switch (code)
