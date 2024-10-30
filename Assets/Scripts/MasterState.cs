@@ -48,8 +48,8 @@ public class MasterState : MonoBehaviour
     {
         manager = FindAnyObjectByType<DialogManager>();
         HandleSceneInteractors ();
-        HandlePlayerAbilities ();
-        Debug.Log("State" + this.state);
+        HandlePlayerAbilities (); 
+        Debug.Log("State: " + this.state);
     }
 
     public void UpdateState (int state)
@@ -58,18 +58,21 @@ public class MasterState : MonoBehaviour
 
         if (state == 3)
         {
-                Debug.Log("updating to state 3");
                 PlayerNeedle playerNeedle = Player.GetComponent<PlayerNeedle>();
                 GameObject needleObject = GameObject.Instantiate(needlePrefab);
                 //make sure player and needle recognize each other as the wielder & weapon/needle accordingly
                 needleObject.GetComponent<NeedleState>().wielder = Player;
                 NeedleMovement needleMovement = needleObject.GetComponent<NeedleMovement>();
                 playerNeedle.SetNeedle(needleMovement);
+        } else if (state == 11)
+        { // set immediately
+            PlayerPowerupInventory inventory = Player.GetComponent<PlayerPowerupInventory>();
+            inventory.propelUnlocked = true;
         }
 
         interactorDetails.Clear ();
         HandleSceneInteractors ();
-        HandlePlayerAbilities ();
+        HandlePlayerAbilities (); 
     }
 
     private void HandleSceneInteractors ()

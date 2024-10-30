@@ -143677,7 +143677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 997195187}
   needlePrefab: {fileID: 77980522465328453, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-  state: 2
+  state: 11
 --- !u!4 &2066294873
 Transform:
   m_ObjectHideFlags: 0
