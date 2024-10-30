@@ -64,20 +64,35 @@ public class PlayerJump : MonoBehaviour
     public bool IsGrounded()
     {
 
-        
+
         //if (!Mathf.Approximately(rb.velocity.y, 0))
         //{
         //    return false;
         //}
 
-        Ray ray = new(col.bounds.center, Vector3.down);
+        //Note: Trying out alternate Raycasting method for more accurate conditions to jump
+        BoxCollider2D feetCollider = this.GetComponent<BoxCollider2D>();
+        if (feetCollider != null)
+        {
+            float raycastDistance = 0.01f; //shift the box X distance downwards for raycast
 
-        // A bit below the bottom
-        float fullDistance = col.bounds.extents.y + 0.05f - col.bounds.extents.x; // TODO: why is this here
+            Vector2 raycastStartingPosition = (Vector2)(feetCollider.transform.position) + feetCollider.offset;
 
-        //Note: did 95% of collider's size in case the side's are already touching walls
-        return Physics2D.CapsuleCast(this.transform.position, col.size * 0.95f, col.direction, 0, Vector2.down, fullDistance, groundWallLayer);
+            bool result = Physics2D.BoxCast(raycastStartingPosition, feetCollider.size, 0, Vector2.down, raycastDistance, groundWallLayer);
+            //Debug.Log("Using alternative method of raycasting which reports: " + result);
+            return result;
+        }
+        else //if we don't find the box collider needed for alternate Raycasting method, we'll do the original old method
+        {
 
+            Ray ray = new(col.bounds.center, Vector3.down);
+
+            // A bit below the bottom
+            float fullDistance = col.bounds.extents.y + 0.05f - col.bounds.extents.x; // TODO: why is this here
+
+            //Note: did 95% of collider's size in case the side's are already touching walls
+            return Physics2D.CapsuleCast(this.transform.position, col.size * 0.95f, col.direction, 0, Vector2.down, fullDistance, groundWallLayer);
+        }
         
     }
 }
