@@ -1221,26 +1221,6 @@ PrefabInstance:
       propertyPath: wielder
       value: 
       objectReference: {fileID: 1548726214}
-    - target: {fileID: 7215237344972053194, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215237344972053194, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215237344972053194, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215237344972053194, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: -0.4813628
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215237344972053194, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
