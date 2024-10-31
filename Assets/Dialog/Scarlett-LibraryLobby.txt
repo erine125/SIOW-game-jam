@@ -1,3 +1,3 @@
 1	Scarlett	Can I help you?	#005500		2	
-	Fern	Um... sorry, I was just looking around.	#005500		3	
-	Scarlett	Then don't bother me. I'm busy.	#005500	MakeReluctant		
+	Fern	Hey girl can i go into the archives	#005500		3	
+	Scarlett	ok sexy mwah	#005500	UpdateState5		
