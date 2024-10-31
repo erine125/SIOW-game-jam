@@ -18,6 +18,10 @@ public class PlayerRun : MonoBehaviour
     SpriteRenderer sr;
     Animator animator;
 
+    //the variables below are for playing sound effects for running
+    public AudioSource audioSource;
+    public AudioClip runningClip;
+    PlayerJump playerJump;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +29,28 @@ public class PlayerRun : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         sr = this.GetComponent<SpriteRenderer>();
         animator = this.GetComponent<Animator>();
+
+        playerJump = this.GetComponent<PlayerJump>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //record the current horizontal speed
+        float horizontalSpeed = Mathf.Abs(rb.velocity.x);
+        //if moving above certain speed while grounded, play running sound
+        if (horizontalSpeed > 1.0f && playerJump.IsGrounded())
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(runningClip);
+            }
+            
+        }
+        else //otherwise, have no running sound
+        {
+            audioSource.Stop();
+        }
         
     }
 
