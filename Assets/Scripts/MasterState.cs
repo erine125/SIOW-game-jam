@@ -265,6 +265,14 @@ public class MasterState : MonoBehaviour
                             a.ActiveTree = 7;
                             a.Visible = true;
                         }
+                        else if (state == 8)
+                        {
+                            SpriteRenderer sr = a.GetComponent<SpriteRenderer>();
+                            sr.sprite = a.GetComponent<SpriteManager>().happySprite;
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.ActiveTree = 8;
+                            a.Visible = true;
+                        }
                         else
                         {
                             a.Talkitiveness = Talkitiveness.Quiet;
