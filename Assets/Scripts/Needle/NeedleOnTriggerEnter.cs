@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeedleOnTriggerEnter : MonoBehaviour
 {
     NeedleState needleState;
+    NeedleMovement needleMovement;
     Collider2D col;
     Rigidbody2D rb;
 
@@ -18,6 +19,7 @@ public class NeedleOnTriggerEnter : MonoBehaviour
     void Start()
     {
         needleState = this.GetComponent<NeedleState>();
+        needleMovement = this.GetComponent<NeedleMovement>();
         col = this.GetComponent<Collider2D>();
         rb = this.GetComponent<Rigidbody2D>();
 
@@ -111,6 +113,7 @@ public class NeedleOnTriggerEnter : MonoBehaviour
 
     void StopRecall()
     {
+
         //update state with ending recall & starting equip
         needleState.SetEquipped();
 
@@ -123,7 +126,11 @@ public class NeedleOnTriggerEnter : MonoBehaviour
         //turn off hitbox
         col.enabled = false;
 
-
+        //play sound for player successfully recalling needle & equipping it
+        if (needleMovement.audioSource != null && needleMovement.needleRecalledToPlayerClip != null)
+        {
+            needleMovement.audioSource.PlayOneShot(needleMovement.needleRecalledToPlayerClip);
+        }
     }
 
 }

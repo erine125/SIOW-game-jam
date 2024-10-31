@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using static Unity.VisualScripting.Member;
 using static UnityEngine.GraphicsBuffer;
 
 public class NeedleMovement : MonoBehaviour
@@ -15,6 +16,9 @@ public class NeedleMovement : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
+    public AudioSource audioSource;
+    public AudioClip throwNeedleClip;
+    public AudioClip needleRecalledToPlayerClip;
 
 
     // Start is called before the first frame update
@@ -74,6 +78,12 @@ public class NeedleMovement : MonoBehaviour
 
         rb.AddForce(throwingDirection * throwingForce); //this gave a speed of 24
         //rb.velocity = throwingDirection * throwSpd;
+
+        //play audio for throwing needle
+        if (audioSource != null && throwNeedleClip != null)
+        {
+            audioSource.PlayOneShot(throwNeedleClip);
+        }
     }
 
     //recall ability in needle
