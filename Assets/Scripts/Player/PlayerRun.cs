@@ -43,7 +43,7 @@ public class PlayerRun : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayOneShot(runningClip);
+                audioSource.PlayOneShot(runningClip, 0.5f);
             }
             
         }

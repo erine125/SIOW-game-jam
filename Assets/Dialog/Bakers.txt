@@ -1,6 +1,51 @@
-7	Ginger	This is a placeholder conversation. IT's currently GameState7	#201411	MakeQuiet	2
-	Jasper	We are fighting! 	#201411		3
-	Fern	Cool, bye!	#201411	UpdateState8	
-8	Ginger	This is a placeholder conversation. IT's currently GameState8	#201411	MakeQuiet	5
-	Jasper	We made up yay	#201411		6
-	Fern	Cool, bye!	#201411	MakeReluctant	
+7	Ginger	Would it kill you to care a little more?	#201411		2	
+	Jasper	Would it kill YOU to be a little more human? We're not all ambitious workaholics like you!	#201411		3	
+	Ginger	Oh, so it's not reasonable to get mad when you can't fulfill a simple order? 	#201411		4	
+	Jasper	It's not as easy as you make it out to be! Like it's my fault the choux deflated?!	#201411		5	
+	Ginger	You're literally the head pastry chef! You should know this stuff!	#201411		6	
+	Ginger	It's like you don't even want to try for our business!	#201411		7	
+	Jasper	You think I'm not trying?! So you're the only one who's allowed to make mistakes?	#201411		8	
+	Ginger	When will you stop putting words in my mouth -- oh my god, a customer! Hi!	#201411		9	
+	Jasper	This is just like you...	#201411		10	
+	Fern	Um... is this a bad time?	#201411		11	
+	Jasper	Oh, no, this happens all the time.	#201411		12	
+	Ginger	Stop saying that! No, everything's fine. We were just having a little disagreement. Can I help you get something?	#201411		13	
+	Jasper	Right, just pretend it's not happening. That's going to help.	#201411		14	
+	Fern	Uh... I'm Fern, Saffron's daughter? My grandma sent me... 	#201411		15	
+	Jasper	I suppose you're here to tell Ginger she's being ridiculous?	#201411		16	
+	Ginger	Or to tell him he needs to step it up!	#201411		17	
+	Fern	Um... No. Maybe it's not my place, but... do you guys really fight all the time?	#201411		18	
+	Ginger	No, no! I mean, sometimes I get a little annoyed...	#201411		19	
+	Jasper	What you mean is, you have ridiculous expectations.	#201411		20	
+	Ginger	I just want our business to grow! Don't you want that?	#201411		21	
+	Jasper	Not if it means we're going to be fighting all the time.	#201411		22	
+	Jasper	We built our business out of love. Why should it get in the way of our relationship?	#201411		23	
+	Ginger	Don't you mean, why should our relationship get in the way of our business?	#201411		24	
+	Fern	Okay, I don't want to overstep, but it doesn't sound like you two are listening to each other. You're just repeating the same fight over and over...	#201411		25	
+	Jasper	Well, help us settle this, then.	#201411		26	
+	Ginger	Yeah, Fern! Who's right, him or me?	#201411		27	
+	Fern	What? That's not what I...	#201411		28	
+	Fern	Look, I don't know everything, but I know that it's not an issue of who's right. You need to work out the problem. I know what it's like... it's scary, but you have to do it.	#201411		29	
+	Ginger	What are you saying?	#201411		30	
+	Fern	I think...	#201411		31	32
+	Fern	You need to be a team. I know it's hard, but believe in each other.	#201411		33	
+	Fern	If you're unhappy, don't force it. Doing what you love is the most important.	#201411		36	
+	Ginger	...It's not that we don't believe in each other. 	#201411		34	
+	Jasper	But you put so much pressure on me. I'm sorry I can't meet your expectations.	#201411		35	
+	Ginger	No, I'm sorry. I should be more patient. 	#201411		40	
+	Ginger	Doing what we love...	#201411		37	
+	Ginger	You're right... I've been so caught up in expanding our business that I forgot why we started it in the first place.	#201411		38	
+	Jasper	But... seeing our business grow makes you happy. Serving customers, watching them bite into a cupcake and say how delicious it is... that makes you happy. And it makes me happy too.	#201411		39	
+	Jasper	Maybe we just lost sight of that for a bit. 	#201411		40	
+	Ginger	Do you still love baking?	#201411		41	
+	Jasper	Of course. More than anything. The pressure made it hard, and that's why I was unhappy, but... I could never not love the craft.	#201411		42	
+	Ginger	Maybe we need to take a step back. We can afford to take a little break from sales. Don't bake for customers... bake for yourself. Because you love it.	#201411		43	
+	Jasper	Really?	#201411		44	
+	Ginger	Of course. Thank you, Fern. I think you were right. 	#201411		45	
+	Fern	Um, you're welcome? I feel like I didn't do anything...	#201411		46	
+	Jasper	No, you did everything. Thank you.	#201411		47	
+	Ginger	And if there's anything we can do for you, or your grandma...	#201411		48	
+	Fern	I'm glad you two are working things out. Don't give me so much credit, though. But if you're offering... my grandma really loves your cream puffs.	#201411		49	
+	Jasper	Ah no, the choux! 	#201411	MakeQuiet	50	
+	Jasper	It's all deflated... But I will make a fresh batch for you and your grandmother! With love this time...	#201411	UpdateState8		
+8	Ginger and Jasper	<i>They seem immersed in their conversation. It's probably time for you to go home.</i>	#201411	MakeReluctant			

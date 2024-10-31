@@ -1,20 +1,130 @@
-1	Grandma	This is a placeholder conversation. It's currently GameState1	#201411	MakeReluctant	2
-	Fern	Cool, bye!	#201411	UpdateState2	
-2	Grandma	This is a placeholder conversation. It's currently GameState2	#201411		4
-	Fern	Cool, bye!	#201411	MakeReluctant	
-3	Grandma	This is a placeholder conversation. It's currently GameState3	#201411	MakeReluctant	6
-	Fern	Cool, bye!	#201411	UpdateState4	
-4	Grandma	This is a placeholder conversation. It's currently GameState4	#201411		8
-	Fern	Cool, bye!	#201411	MakeReluctant	
-6	Grandma	This is a placeholder conversation. It's currently GameState6	#201411	MakeReluctant	10
-	Fern	Cool, bye!	#201411	UpdateState7	
-7	Grandma	This is a placeholder conversation. It's currently GameState7	#201411		12
-	Fern	Cool, bye!	#201411	MakeReluctant	
-8	Grandma	This is a placeholder conversation. It's currently GameState8	#201411	MakeReluctant	14
-	Fern	Cool, bye!	#201411	UpdateState9	
-9	Grandma	This is a placeholder conversation. It's currently GameState9	#201411		16
-	Fern	Cool, bye!	#201411	MakeReluctant	
-10	Grandma	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	18
-	Fern	Cool, bye!	#201411	UpdateState11
-11	Grandma	This is a placeholder conversation. It's currently GameState11	#201411	MakeReluctant	20
-	Fern	Cool, bye!	#201411		
+1	Fern	Grandma? It's good to see you.	#201411		2
+	Grandma	Oh my stars... how long has it been? You've gotten so big!	#201411		3
+	Grandma	You were still the size of a wee bean the last I saw you…	#201411		4
+	Fern	I stopped growing when I was, like, sixteen… 	#201411		5
+	Grandma	Well, I'm just happy to see you, dear. I've missed seeing that little sprout head of yours.	#201411		6
+	Fern	Grandma!	#201411		7
+	Fern	Never mind. How's your health? Indy said you weren't well.	#201411		8
+	Grandma	Oh, that child's a worrier. But I'm so glad you two are still so close!	#201411		9
+	Fern	We're not.	#201411		10
+	Fern	What can I do for you, Grandma? Water or maybe groceries? You probably need your rest.	#201411		11
+	Grandma	Oh, dear. You finally visit after all these years and I don't even have the strength to cook for you... I've just had so little energy these days.	#201411		12
+	Grandma	But don't you worry, poppet, I'll be alright. You didn't need to come all the way here from the city. Don't you have school?	#201411		13
+	Fern	I graduated. And it's fine. I wanted to take care of you.	#201411		14
+	Fern	I should have been here sooner.	#201411		15
+	Grandma	Well, dear, it's as I always say. Even the most unruly of knots can be fixed with care and effort. Let's not dwell on mistakes, darling; there is always time to correct them.	#201411		16
+	Grandma	Oh! That reminds me. Would you be a dear and go fetch my old knitting needles? They're in the attic, and getting up there is such a pain these days. These old bones don't like clambering over things quite so much anymore...	#201411		17
+	Fern	Your knitting needles? You don't mean your magic needles?	#201411		18
+	Fern	Grandma, if you can't even make it to the attic, do you really think you should be going out and doing magic again?	#201411		19
+	Grandma	Darling, this town needs someone to look after it. It needs its needlemancer! The threads of fate that tie our community together would come undone without upkeep.	#201411		20
+	Grandma	Ever since the founding of Purl Coast, our ancestors and the magic they passed down --	#201411		21
+	Fern	You don't have to tell the story again, Grandma.	#201411		22
+	Fern	I know you love helping everyone, and I know how important this is.	#201411	MakeReluctant	23
+	Fern	Fine, I'll get the needles. But then I'm making you some dinner.	#201411	UpdateState2	
+2	Grandma	Dear, did you find the knitting needles?	#201411		25
+	Grandma	They're tucked away in the very back of the attic. You can't miss them! You might have to jump a bit to grab them, though, with your small stature. Don't worry -- once you pick them up, you'll have a much easier time.	#201411		26
+	Fern	What's that supposed to mean?	#201411		27
+	Grandma	Dear, you've been knitting since the day you were born! The needles will work their magic for you. I just know it.	#201411	MakeReluctant	
+3	Grandma	Wonderful! Looks like these old things still have some shine to them.	#201411		29
+	Fern	It's really been a while, hasn't it.	#201411		30
+	Grandma	When you get old like me, you stop worrying about things like that. 	#201411		31
+	Grandma	And I can still sense the magic running through them... Darling, did you use them? Did the magic work for you?	#201411		32
+	Fern	I mean, I tried. But I'm not you, Grandma. I don't have the skills you have with magic.	#201411		33
+	Grandma	All in good time, darling. But for now -- what day is it today, dear? My memory isn't what it used to be.	#201411		34
+	Fern	It's Tuesday.	#201411		35
+	Grandma	Ah... it's that day of the week, isn't it.	#201411		36
+	Fern	What do you mean?	#201411		37
+	Grandma	Do you remember what the duties of a needlemancer are, my dear?	#201411		38
+	Fern	Kind of.	#201411		39
+	Fern	Helping the town, stuff like that.	#201411		40
+	Grandma	Indeed! For years, I and those who wielded the magic needles before me have channeled the powers of this ancient magic...	#201411		41
+	Fern	Grandma, I feel like you're making it sound more mystical than it is. I'm not a kid anymore.	#201411		42
+	Grandma	Hoho! Don't I know it. Either way, this magic is potent stuff, and it's necessary to keep our town close knit and together! The powerful threads of fate must be maintained!	#201411		43
+	Fern	Alright, Grandma. As ridiculous as you make it sound... I get how important this is. But you still shouldn't be going around town! You need rest!	#201411		44
+	Grandma	Oh, listen here, dear.	#201411		45
+	Grandma	There's a young lady working at the library. Scarlett.	#201411		46
+	Grandma	The library is a busy place. Our community relies on it to archive our history! But Scarlett insists she can handle it all by herself. A little uptight, that one. But sweet on the inside. Kind of like you, my dear!	#201411		47
+	Fern	Hey!	#201411		48
+	Grandma	She's got her system, everything in its place, all that. But an extra pair of hands never hurt. Certainly it can't be easy running an operation of such size! Now, normally on Tuesdays I go see her myself, but of course...	#201411		49
+	Fern	You don't mean...	#201411		50
+	Grandma	Fern, my dear, do me a favor and go in my stead?	#201411		51
+	Fern	What? I can't do that!	#201411		52
+	Fern	I've never worked at a library... and I just said it, I barely know anything about your needle magic!	#201411		53
+	Fern	Come on, Grandma, I'm not like you. I'd probably just make things worse. No one wants that.	#201411		54
+	Grandma	Oh, dear, don't fret your little sprout head about it. I'm only asking for you to check up on how she's doing. No magic required.	#201411		55
+	Fern	...Fine. But does she even need my help?	#201411		56
+	Fern	I'm sure she doesn't want it.	#201411	MakeReluctant	57
+	Grandma	Oh, dear, stop your worrying. Just go and see! And don't forget your needles, hoho!	#201411	UpdateState4	
+4	Grandma	Do you need help finding your way to the library, dear? It's certainly been a while since you've been away from home, hasn't it!	#201411		59
+	Grandma	When you leave home, turn right, and go past the Art Market. Oh, those little crafts and trinkets are so gorgeous! I always love stopping by to see what everyone in town is making these days. We're a crafty bunch, that's for sure!	#201411		60
+	Fern	Grandma, stop getting distracted!	#201411		61
+	Grandma	Oh, you'll have to forgive me, darling. Anyway, once you go past the Art Market, just head north and you should see the library! It's a grand building, with that beautiful golden dome on top. You can't miss it!	#201411	MakeReluctant	
+6	Grandma	Welcome home, dear! You're just in time. My radio show just ended!	#201411		63
+	Grandma	How is Scarlett doing? Not too swamped with work I hope?	#201411		64
+	Fern	She'll be alright. I didn't even really do any magic. I think maybe she just needed someone to talk to. 	#201411		65
+	Grandma	And that's all it takes, dear! But I do see some magic sparkling on those needles...	#201411		66
+	Fern	Are you sure it's not just your eyesight, Grandma?	#201411		67
+	Grandma	How rude! I'll have you know I'm still sharp as a hawk. But I know you didn't mean anything by it, dear.	#201411		68
+	Grandma	And thank you for helping out with my duties. I know you just got home and you've barely settled back in! 	#201411		69
+	Fern	It's no trouble at all, Grandma, really.	#201411		70
+	Grandma	Well, then, why don't you help your dear old gran out with one more thing?	#201411		71
+	Fern	Of course. Errands, chores, whatever you need.	#201411		72
+	Fern	...But why do I get the feeling that's not what you mean?	#201411		73
+	Grandma	You must have passed by the little bakery in town. It's just north of here! They opened after you left, and you simply must try their chiffon cakes! Oh, and they make the most delightful little cream puffs... I'm getting excited just thinking about them.	#201411		74
+	Fern	Sure, I can grab us some dessert, Grandma. 	#201411		75
+	Grandma	No, no, that's not what I mean. There's a lovely couple that runs the place -- Ginger and Jasper. So sweet, but always swarmed with orders. And always bickering.	#201411		76
+	Grandma	I suppose when business is booming, things get stressful! Now, as part of my needlemancer duties...	#201411		77
+	Fern	I see where this is going. Grandma, I told you, I can't do magic like you. I don't have the experience. 	#201411		78
+	Grandma	Well, it seems like your time with Scarlett was a great success.	#201411		79
+	Fern	That wasn't any magic. I just got lucky and said the right things. It doesn't mean anything.	#201411		80
+	Fern	It's not that I don't want to. I love knitting, and I loved watching you do magic as a kid. But I just...	#201411		81
+	Grandma	Just what, dear?	#201411		82
+	Fern	Never mind. I'll go.	#201411	MakeReluctant	83
+	Grandma	Wonderful! And bring us back some cream puffs!	#201411	UpdateState7	
+7	Grandma	Dear, did you get lost? 	#201411		85
+	Grandma	The bakery is just north of here. Take a right outside the house and head up -- they're right above us!	#201411	MakeReluctant	
+8	Grandma	How did it go at the bakery, dear?	#201411		87
+	Fern	Alright, I think. I didn't do any magic this time, either. I think they just needed someone to hear them out, someone to make them realize their relationship matters too, not just their business.	#201411		88
+	Fern	I think they're going to close the bakery down for a bit. Just until they've figured things out. But I did get the cream puffs.	#201411		89
+	Grandma	Wonderful! I'll miss those dear little pastries, but seeing our community come together is sweeter than anything. I can feel the threads of fate growing stronger and stronger!	#201411		90
+	Fern	What are you talking about, Grandma? I literally haven't done any magic.	#201411		91
+	Grandma	And yet I can feel our bonds strengthening. Whatever you're doing, dear, it's special, and I'm so proud of you.	#201411		92
+	Fern	For what? I'm not doing anything special. I'm just talking to people.	#201411		93
+	Grandma	Well, I think you've done a great job. The needles' magic is sparkling for you!	#201411	MakeReluctant	94
+	Grandma	I think I need some rest. Take some time for yourself, dear. You deserve it.	#201411	UpdateState9	
+9	Grandma	<i>She's sleeping. She looks so much frailer than you remember.</i>	#201411		96
+	Grandma	<i>You think maybe your vision of Grandma is still that of your childhood. She was the town's hero. She could do anything. You could never live up to that.</i>	#201411		97
+	Grandma	<i>Grandma always says she's proud of you. And you wonder how she can be, when she's so strong, so capable. And you're just... you.</i>	#201411	MakeReluctant	
+10	Fern	Grandma...	#201411		99
+	Grandma	Is something the matter, dear?	#201411		100
+	Fern	I love it. I do. I love knitting.	#201411		101
+	Fern	Every stitch and every loop makes me love it even more.	#201411		102
+	Fern	Even when I lose count of the rows, even when I mess up... I just want to keep going.	#201411		103
+	Fern	I fail, and I just want to continue knitting! Just because I love it! For me, that's... that's enough.	#201411		104
+	Fern	I don't know if I can help others. I know everyone's saying I helped them, but... even now, there's this little voice in my head. Telling me that they're just saying that to be nice.	#201411		105
+	Fern	But... I want to believe them. That I made a difference... a small one, maybe. But a difference.	#201411		106
+	Fern	I know I'm not good enough. I can't be organized like Scarlett, ambitious and creative like the bakers, decisive like Indy...	#201411		107
+	Fern	And I can't use magic the way you can, Grandma. I can't knit as quickly and as precisely as you. I don't think I ever will.	#201411		108
+	Fern	But I want to do it. I want to be the next needlemancer. I know I'm not ready yet, but...	#201411		109
+	Fern	I've never wanted so badly to be enough.	#201411		110
+	Grandma	Oh, sweetie...	#201411		111
+	Grandma	Do any of us really know what we're doing? Even at my old age, I still make mistakes. 	#201411		112
+	Grandma	And even in my youth, nothing I made was perfect. That little scarf I gave you before you left had mistakes too. I've always felt that small thing wasn't good enough for my little girl.	#201411		113
+	Fern	But I love that scarf.	#201411		114
+	Grandma	That warms my heart.	#201411		115
+	Grandma	We all have our doubts. 	#201411		116
+	Grandma	If you really want to, there is a way to know for certain if you're ready.	#201411		117
+	Fern	How?	#201411		118
+	Grandma	High above the mountains lies the shrine of our ancestors.	#201411		119
+	Grandma	They will appear and acknowledge the next needlemancer. It is an ancient ritual... hoho!	#201411		120
+	Grandma	I too climbed to the top to receive the title of needlemancer. But the path is perilous, poppet. It will not be an easy climb. And I shall not force you.	#201411		121
+	Fern	...	#201411		122
+	Fern	I just... need to hear I can do this. 	#201411		123
+	Fern	If I can get their acknowledgment, I'll do it.	#201411		124
+	Grandma	You've made up your mind, I see. Stay safe, sweetheart.	#201411		125
+	Grandma	As much as I want to, I can't go up there with you. But I'll teach you a trick.	#201411		126
+	Grandma	It's a little trick I learned in my youth... though it's more difficult to pull off now. 	#201411		127
+	Grandma	When throwing your needle, press <b>right click</b> instead for a little boost!	#201411		128
+	Grandma	Maybe it'll help propel you where you need to go.	#201411	UpdateState11	
+11	Grandma	Are you still nervous about climbing the mountain, dear?	#201411		130
+	Grandma	Remember the trick I taught you. Press <b>right click</b> to propel yourself when throwing the needle... it'll take you to higher places, my dear!	#201411	MakeReluctant	

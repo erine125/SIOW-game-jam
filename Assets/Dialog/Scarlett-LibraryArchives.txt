@@ -1,2 +1,32 @@
-5	Scarlett	This is a placeholder conversation. It's currently GameState5	#201411	MakeQuiet	2
-	Fern	Cool, bye!	#201411	UpdateState6	
+5	Scarlett	You're not allowed in here, you know.	#201411		2
+	Fern	I... That's a lot of books.	#201411		3
+	Scarlett	I never said the job was easy.	#201411		4
+	Scarlett	But I'll manage. You should leave.	#201411		5
+	Fern	I want to help.	#201411		6
+	Scarlett	How could you possibly help? You might have those needles, but you're not the needlemancer. You don't know anything about me.	#201411		7
+	Fern	Did my grandma?	#201411		8
+	Scarlett	... Yes. Of course. I don't know exactly what magic she did, but she kept this place and the community together. Everything's been different since she's been sick.	#201411		9
+	Scarlett	But if you think you can just waltz in here and take over, and I’m going to trust you just like that, you’re…	#201411		10
+	Fern	Of course I don't think that. My grandma... what she does for this town is special. And I'm just me.	#201411		11
+	Fern	I'm not her. I'm just someone who loves to knit. I don't claim to be the rightful owner of these needles. I mean, god, I don't even know what I'm doing with them. I can't be her. I can't fix this. I can't make it all better.	#201411		12
+	Fern	But I want to help you. So will you let me?	#201411		13
+	Scarlett	... It's a mess back here.	#201411		14
+	Fern	That's okay.	#201411		15
+	Scarlett	No, you don't get it. It's a <i>mess.</i> And it's not okay. I keep things organized; that's what I do. I take care of the books. And I don't get overwhelmed. 	#201411		16
+	Fern	Everybody gets overwhelmed.	#201411		17
+	Scarlett	Not me. I'm not everybody. I'm the librarian, and people are counting on me. 	#201411		18
+	Fern	Would a little help be so bad?	#201411		19
+	Scarlett	Yes. I don't need help. I don't need to look weak.	#201411		20
+	Fern	I don't think asking for help makes you look weak.	#201411		21
+	Scarlett	Of course <i>you</i> wouldn't.	#201411		22
+	Scarlett	But I'm not like you. I <i>do</i> know what I'm doing. I've got my system, and it works. And when it doesn't, I make it work. And if I don't, everything falls apart. And that can't happen. Do you even understand what that's like?	#201411		23
+	Fern	I think so.	#201411		24
+	Fern	Like... you're just treading water. Like if you stop you'll drown.	#201411		25
+	Fern	You're right. I don't know what I'm doing. But I know not to force what can't be done. If you pull too taut you'll snap. 	#201411		26
+	Fern	I can tell you love this place. I can tell you love what you do. Just like I love what I do. And if you want it to be a success, then... maybe you have to ask for help once in a while. Maybe it's okay to acknowledge that you can't do it sometimes.	#201411		27
+	Scarlett	...	#201411		28
+	Scarlett	... Of course I love this place. It's my life. I'd do anything to keep it up and running...	#201411		29
+	Scarlett	Fine. I guess I see your point. 	#201411		30
+	Scarlett	Your grandma was good at getting people to understand, too. Maybe you're a bit like her.	#201411		31
+	Fern	Did you just compliment me?	#201411	MakeQuiet	32
+	Scarlett	Shut up.	#201411	UpdateState6	
