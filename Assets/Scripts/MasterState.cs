@@ -42,6 +42,8 @@ public class MasterState : MonoBehaviour
         {
             Debug.LogWarning("Master state exists already");
         }
+
+        Player = GameObject.Find("Player");
     }
 
     public void OnSceneLoad (Scene scene, LoadSceneMode mode)
@@ -50,6 +52,7 @@ public class MasterState : MonoBehaviour
         HandleSceneInteractors ();
         HandlePlayerAbilities (); 
         Debug.Log("State: " + this.state);
+        Player = GameObject.Find("Player");
     }
 
     public void UpdateState (int state)
@@ -189,6 +192,18 @@ public class MasterState : MonoBehaviour
                             a.Visible = true;
                             a.Talkitiveness = Talkitiveness.Talkitive;
                             a.ActiveTree = 2;
+                        }
+                        break;
+                    case "AtticTrapdoor":
+                        if (state == 1)
+                        {
+                            a.Visible = true;
+                            a.Talkitiveness = Talkitiveness.Talkitive;
+                            a.ActiveTree = 1;
+                        } else
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
                         }
                         break;
                     case "Indy-Town":

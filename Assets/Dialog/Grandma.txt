@@ -1,0 +1,20 @@
+1	Grandma	This is a placeholder conversation. It's currently GameState1	#201411	MakeReluctant	2
+	Fern	Cool, bye!	#201411	UpdateState2	
+2	Grandma	This is a placeholder conversation. It's currently GameState2	#201411		4
+	Fern	Cool, bye!	#201411	MakeReluctant	
+3	Grandma	This is a placeholder conversation. It's currently GameState3	#201411	MakeReluctant	6
+	Fern	Cool, bye!	#201411	UpdateState4	
+4	Grandma	This is a placeholder conversation. It's currently GameState4	#201411		8
+	Fern	Cool, bye!	#201411	MakeReluctant	
+6	Grandma	This is a placeholder conversation. It's currently GameState6	#201411	MakeReluctant	10
+	Fern	Cool, bye!	#201411	UpdateState7	
+7	Grandma	This is a placeholder conversation. It's currently GameState7	#201411		12
+	Fern	Cool, bye!	#201411	MakeReluctant	
+8	Grandma	This is a placeholder conversation. It's currently GameState8	#201411	MakeReluctant	14
+	Fern	Cool, bye!	#201411	UpdateState9	
+9	Grandma	This is a placeholder conversation. It's currently GameState9	#201411		16
+	Fern	Cool, bye!	#201411	MakeReluctant	
+10	Grandma	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	18
+	Fern	Cool, bye!	#201411	UpdateState10	
+11	Grandma	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	20
+	Fern	Cool, bye!	#201411		
