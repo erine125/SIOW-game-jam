@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48276168, y: 0.8650497, z: 0.93813}
+  m_LocalScale: {x: 0.95, y: 0.8650497, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -1567359253
   m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b134c35f083a9c44e871f50d9ae0533c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1776591f62a4645a4b14e6186efe374d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -126,7 +126,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.5}
+    oldSize: {x: 0.15, y: 0.67}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -134,9 +134,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16, y: -0.48}
-      - {x: 0, y: 0.74}
-      - {x: -0.16, y: -0.48}
+    - - {x: 0.08, y: -0.3}
+      - {x: 0, y: 0.35}
+      - {x: -0.08, y: -0.3}
   m_UseDelaunayMesh: 0
 --- !u!50 &1770262691133155740
 Rigidbody2D:
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
-  circleOffsetMagnitude: 0.9
+  circleOffsetMagnitude: 0.5
   mouseCursor: {fileID: 0}
   mouseCursorPrefab: {fileID: 1202799245746012412, guid: 6a0a3853a40324284a86b827bc7bda0c, type: 3}
   defaultRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
