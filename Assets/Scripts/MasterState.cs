@@ -303,12 +303,6 @@ public class MasterState : MonoBehaviour
                         a.Visible = (state == 2);
                         a.ActiveTree = 2;
                         break;
-                    case "UptownManhole":
-
-                        a.Talkitiveness = (state >= 9) ? Talkitiveness.Reluctant : Talkitiveness.Quiet;
-                        a.Visible = (state >= 9);
-                        a.GetComponent<Collider2D>().enabled = (state >= 9);
-                        break;
                 }
             }       
         }
