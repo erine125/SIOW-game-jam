@@ -225,7 +225,7 @@ public class MasterState : MonoBehaviour
                             a.Visible = false;
                             a.Talkitiveness = Talkitiveness.Quiet;
                         }
-                        else if (state < 9)
+                        else if (state == 4)
                         {
                             a.Visible = true;
                             a.Talkitiveness = Talkitiveness.Reluctant;
@@ -289,13 +289,13 @@ public class MasterState : MonoBehaviour
                         {
                             a.Talkitiveness = Talkitiveness.Talkitive;
                             a.Visible = true;
-                            a.ActiveTree = 10;
+                            a.ActiveTree = 9;
                         }
                         else if (state == 10)
                         {
                             a.Talkitiveness = Talkitiveness.Reluctant;
                             a.Visible = true;
-                            a.ActiveTree = 11;
+                            a.ActiveTree = 10;
                         }
                         else
                         {

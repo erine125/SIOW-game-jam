@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Art Scenes/Ext-Shrine.unity
     guid: 5cd944d64ad2d4b40930540667d61b7c
+  - enabled: 1
+    path: Assets/Scenes/Art Scenes/Int-Sewer.unity
+    guid: 6860b3f67134d034c8588b0337183968
   m_configObjects: {}

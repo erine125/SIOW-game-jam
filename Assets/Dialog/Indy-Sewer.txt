@@ -1,0 +1,4 @@
+9	Indy	This is a placeholder conversation. It's currently GameState9	#201411	MakeReluctant	2
+	Fern	Cool, bye!	#201411	UpdateState10	
+10	Indy	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	4
+	Fern	Cool, bye!	#201411		

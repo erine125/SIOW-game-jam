@@ -15,6 +15,6 @@
 9	Grandma	This is a placeholder conversation. It's currently GameState9	#201411		16
 	Fern	Cool, bye!	#201411	MakeReluctant	
 10	Grandma	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	18
-	Fern	Cool, bye!	#201411	UpdateState10	
-11	Grandma	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	20
+	Fern	Cool, bye!	#201411	UpdateState11
+11	Grandma	This is a placeholder conversation. It's currently GameState11	#201411	MakeReluctant	20
 	Fern	Cool, bye!	#201411		
