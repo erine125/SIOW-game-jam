@@ -1,0 +1,2 @@
+11	Shrine	This is a placeholder conversation. It's currently GameState11	#201411	MakeQuiet	2
+	Fern	Cool, bye!	#201411	UpdateScene12	

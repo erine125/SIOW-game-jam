@@ -1,0 +1,3 @@
+0	Captain	Attention all passengers: we are now entering Purl Coast. 	#201411		2
+	Captain	This is our one and only stop. All passengers must disembark. Please make sure you have all of your belongings with you.	#201411	MakeQuiet	3
+	Captain	If you're visiting, welcome! And if you're coming home, welcome home.	#201411	UpdateState1	
