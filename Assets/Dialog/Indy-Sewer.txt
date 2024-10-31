@@ -1,4 +1,27 @@
-9	Indy	This is a placeholder conversation. It's currently GameState9	#201411	MakeReluctant	2
-	Fern	Cool, bye!	#201411	UpdateState10	
-10	Indy	This is a placeholder conversation. It's currently GameState10	#201411	MakeReluctant	4
-	Fern	Cool, bye!	#201411		
+9	Fern	This is disgusting. Why did we ever hang out here?	#201411		2
+	Indy	Eh, I think it's kind of cute. In a gross teens way.	#201411		3
+	Indy	Anyway, I hear you've been making your mark around town. You must've really worked some magic with Ginger and Jasper, huh? I've never seen them not bickering, it's insane. And Scarlett? You must be really good at this.	#201411		4
+	Fern	I didn't do anything special.	#201411		5
+	Indy	Really? Because people are saying the young new needlemancer is making our threads of fate tighter than ever... Pretty good for someone who doesn't think they can do anything. 	#201411		6
+	Fern	I just got lucky. I didn't even use any magic.	#201411		7
+	Indy	Fern, it's not about the magic. It's about the fact that you love your craft, and you helped people. Why can't you see that? You're good at this.	#201411		8
+	Fern	Why do you have to keep saying that? You know it just makes me feel worse, right? I already feel like everyone's giving me the credit I don't deserve, and now it's going to feel like I've betrayed everyone if I become needlemancer for real and they find out I just suck. I don't want that. So stop trying to convince me.	#201411		9
+	Indy	That's the reason you don't want to become the next needlemancer? Do you realize how insane you sound?	#201411		10
+	Indy	Everyone in town wants you to be your grandma's successor. But -- forget about them. I'm sorry, I was selfish. Don't do it for us. Do it because you deserve it, because you're good at this.	#201411		11
+	Indy	If you don't wanna do it, that's a different story. I get it. Hell, if I got the chance to skip town like you did... who knows if I'd ever be back. But that's a good reason at least. None of this "I'm not good enough" BS, yeah? 	#201411		12
+	Fern	Of course I want to do it. I love knitting -- more than anything. And I love helping people. But I'm not as good as people think. What happened with Scarlett, at the Bakery, those were flukes.	#201411		13
+	Fern	I don't want people to rely on me, only to find out I'm not as capable as they thought. I hate that feeling. Like I'm lying to everyone.	#201411		14
+	Indy	Do you think we're all stupid or something?	#201411		15
+	Fern	Excuse me?	#201411		16
+	Indy	You keep saying we think you're something you're not. Like you've fooled us all into thinking you're the brilliant needlemancer who can do everything, when in reality you're just you. 	#201411		17
+	Fern	Well --	#201411		18
+	Indy	Everyone here thinks you're good enough. Even Scarlett, and she doesn't think anyone's good enough.	#201411		19
+	Indy	Everyone except you.	#201411		20
+	Indy	So do you think we're all wrong? That we're just easily fooled?	#201411		21
+	Fern	...	#201411		22
+	Fern	When you put it that way...	#201411		23
+	Fern	But what if it's true? What <i>if</i> I really am just lucky?	#201411		24
+	Indy	If you give up now, you'll never know. So just talk to your grandma. Ask her to become her successor. She loves you.	#201411	MakeReluctant	25
+	Fern	... Okay.	#201411	UpdateState10	
+10	Indy	Go see your grandma, Fern.	#201411	MakeReluctant	27
+		I believe in you. We all do.	#201411		

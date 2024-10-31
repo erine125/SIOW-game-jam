@@ -1,4 +1,21 @@
-4	Indy	This is a placeholder conversation. It's currently GameState4	#201411	MakeReluctant	2
-	Fern	Cool, bye!	#201411		
-11	Indy	This is a placeholder conversation. It's currently GameState11	#201411	MakeReluctant	4
-	Fern	Cool, bye!	#201411		
+4	Indy	So you really came back.	#201411		2
+	Fern	My grandma's sick. What am I supposed to do?	#201411		3
+	Indy	So no ‘hello'? Harsh.	#201411		4
+	Fern	Not like you said it to me.	#201411		5
+	Indy	Look, I'm sorry about your grandma. I'm sure she'll be fine. But until then, someone needs to look over this town and our threads of fate.	#201411		6
+	Fern	Wait, what? I'm just here to look after my grandma. Once she's better, I'm going home.	#201411		7
+	Indy	I thought this <i>was</i> your home.	#201411		8
+	Fern	Don't say that. You know what I meant.	#201411		9
+	Fern	I'm not taking up the family magic, Indy. Is that the only reason you wanted me back here? I'm not my grandma. I don't know the first thing about magic.	#201411		10
+	Indy	So why are you even back? Just to make yourself feel better for abandoning us to go off and frolick in the city for four years? Convenient.	#201411		11
+	Fern	It wasn't “frolicking”, okay? It was college. It was me trying to have a normal life, away from here. Not like you would understand what it was like here for me. 	#201411		12
+	Fern	I just want to knit. And take care of my grandma. I can't do this magic stuff. I wouldn't know what to do anyway.	#201411		13
+	Indy	You know what? Do whatever you want. If you don't believe you can be needlemancer, you definitely can't.	#201411	MakeReluctant	
+11	Indy	You're really doing it, huh?	#201411		15
+	Indy	Knew you'd come around.	#201411		16
+	Fern	I can't believe I let you talk me into this. Now my Grandma's saying something about going to the mountains.	#201411		17
+	Indy	The mountains? Why?	#201411		18
+	Fern	Apparently there's some ritual that happens at the shrine at the summit.	#201411		19
+	Indy	Huh. Well, good luck, stay safe, all that.	#201411		20
+	Indy	You know how to get to the mountains, right? Just go right past the library, then head upwards.	#201411		21
+	Indy	You got this. Text me when you get to the top.	#201411	MakeReluctant	
