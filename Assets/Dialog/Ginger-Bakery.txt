@@ -1,0 +1,4 @@
+1	Ginger	Welcome to the bakery! Can I grab something for you?	#201411		2
+	Fern	Oh, wow, this place is new. 	#201411		3
+	Ginger	Freshly renovated! My partner and I moved here from Cocoa Valley three years ago -- he makes the bread, I run the business. To think our small bakery would expand to a beautiful town like this one...	#201411		4
+	Ginger	But look at me, talking your ear off... take a look around, and let me know if you have any questions!	#201411	MakeReluctant	

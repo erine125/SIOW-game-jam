@@ -1,0 +1,3 @@
+7	Ginger	This is a placeholder conversation. IT's currently GameState7	#201411	MakeQuiet	2
+	Jasper	We are fighting! 	#201411		3
+	Fern	Cool, bye!	#201411	UpdateState8	

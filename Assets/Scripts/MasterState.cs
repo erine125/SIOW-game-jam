@@ -113,11 +113,16 @@ public class MasterState : MonoBehaviour
                             a.Talkitiveness = Talkitiveness.Quiet;
                             a.Visible = false;
                         }
-                        else if (state < 11)
+                        else if (state == 6)
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                        }
+                        else if (state >= 7 && state < 11)
                         {
                             a.Talkitiveness = Talkitiveness.Reluctant;
                             a.Visible = true;
-                            a.ActiveTree = 6;
+                            a.ActiveTree = 7;
                         }
                         else
                         {
@@ -140,9 +145,17 @@ public class MasterState : MonoBehaviour
                         }
                         break;
                     case "Ginger-Bakery":
-                        a.Talkitiveness = Talkitiveness.Reluctant;
-                        a.Visible = true;
-                        a.ActiveTree = state < 4 ? 1 : 4;
+                        if (state < 7)
+                        {
+                            a.Talkitiveness = Talkitiveness.Reluctant;
+                            a.Visible = true;
+                            a.ActiveTree = 1;
+                        } else
+                        {
+                            a.Visible = false;
+                            a.Talkitiveness = Talkitiveness.Quiet; 
+                        }
+                        
                         break;
                     case "Grandma":
                         a.ActiveTree = state;
@@ -248,21 +261,14 @@ public class MasterState : MonoBehaviour
                         }
                         else if (state == 7)
                         {
-                            a.Talkitiveness = Talkitiveness.Talkitive;
-                            a.ActiveTree = 7;
-                            a.Visible = true;
-                        }
-                        else if (state < 11)
-                        {
                             a.Talkitiveness = Talkitiveness.Reluctant;
-                            a.ActiveTree = 8;
+                            a.ActiveTree = 7;
                             a.Visible = true;
                         }
                         else
                         {
-                            a.Talkitiveness = Talkitiveness.Reluctant;
-                            a.ActiveTree = 11;
-                            a.Visible = true;
+                            a.Talkitiveness = Talkitiveness.Quiet;
+                            a.Visible = false;
                         }
                         break;
                     case "Indy-Sewer":

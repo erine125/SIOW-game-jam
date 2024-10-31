@@ -22,3 +22,5 @@
 	Fern	Look, you're right. I don't know everything. In fact, I don't know much of anything. But my grandma told me to come here and help you, and she's sick, and I just…	#201411		23	
 	Scarlett	Help me? Is that a joke? I'm singlehandedly running the largest repository of knowledge on this side of the Purl Sea, and who even <i>are</i> you? 	#201411		24	
 	Scarlett	I don't have time for your games. I'll be in the Archives. DON'T follow me. 	#201411	UpdateState5		
+7	Scarlett	This is a placeholder conversation. It's currently GameState7	#201411	MakeReluctant	26
+	Fern	Cool, bye!	#201411	

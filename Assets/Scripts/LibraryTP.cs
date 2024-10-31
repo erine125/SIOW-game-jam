@@ -27,6 +27,15 @@ public class LibraryTP : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        // Reset the trigger flag when the player exits
+        if (col.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false;
+        }
+    }
+
     // Update is called once per frame
     void MovePlayer()
     {
