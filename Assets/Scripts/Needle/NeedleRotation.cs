@@ -8,8 +8,9 @@ public class NeedleRotation : MonoBehaviour
     //note that the position is the base of the weapon/knife, not the center
 
     public float rotationSpeed = 5.0f;
+    public float circleOffsetMagnitude = 0.9f; //the magnitude of offset from center of player that the needle rotates around
 
-    Collider2D col;
+    //Collider2D col;
 
     NeedleState needleState;
 
@@ -26,7 +27,7 @@ public class NeedleRotation : MonoBehaviour
         needleState = this.GetComponent<NeedleState>();
 
         //remember that the needle hitbox is in the child
-        col = this.GetComponentInChildren<Collider2D>();
+        //col = this.GetComponentInChildren<Collider2D>();
 
         mouseCursor = GameObject.FindWithTag("MousePointer");
 
@@ -53,7 +54,7 @@ public class NeedleRotation : MonoBehaviour
 
             //set position; 0.9 away from center relative to player
             Vector3 circleOffset = GetUnitCircleOffset(facingRotation);
-            this.transform.position = needleState.wielder.transform.position + circleOffset * 0.9f;
+            this.transform.position = needleState.wielder.transform.position + circleOffset * circleOffsetMagnitude; //by original testing, used magnitude of 0.9f;
 
         }
 
