@@ -50,7 +50,7 @@ public class NeedleOnTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        OnTriggerStay2D(other); //same as OnTriggerStay2D
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -114,6 +114,9 @@ public class NeedleOnTriggerEnter : MonoBehaviour
 
         //reset orientation (as a precaution)
         needleState.GetComponent<NeedleRotation>().ResetRotations();
+
+        //reset velocity as a precaution upon being equipped
+        rb.velocity = Vector2.zero;
 
         //turn off hitbox
         col.enabled = false;
