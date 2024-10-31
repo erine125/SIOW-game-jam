@@ -8272,7 +8272,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 65
   orthographic: 0
   orthographic size: 5.5
   m_Depth: -1
@@ -142032,6 +142032,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 997195198}
     - target: {fileID: 5891995628781058342, guid: bc2ea41715c874c0e8ff8ecdb3e01f33, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891995628781058342, guid: bc2ea41715c874c0e8ff8ecdb3e01f33, type: 3}
       propertyPath: m_Lens.OrthographicSize
       value: 5.5
       objectReference: {fileID: 0}
@@ -143677,7 +143681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 997195187}
   needlePrefab: {fileID: 77980522465328453, guid: fc441add8207f419ea8ae809881e8baf, type: 3}
-  state: 11
+  state: 2
 --- !u!4 &2066294873
 Transform:
   m_ObjectHideFlags: 0

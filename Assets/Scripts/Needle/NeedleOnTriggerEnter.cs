@@ -44,7 +44,9 @@ public class NeedleOnTriggerEnter : MonoBehaviour
                 rb.gravityScale = 1;
             }
         }
-        
+
+        //needleState = this.GetComponent<NeedleState>();
+
     }
 
 

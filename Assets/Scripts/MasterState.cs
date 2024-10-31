@@ -64,7 +64,7 @@ public class MasterState : MonoBehaviour
                 needleObject.GetComponent<NeedleState>().wielder = Player;
                 NeedleMovement needleMovement = needleObject.GetComponent<NeedleMovement>();
                 playerNeedle.SetNeedle(needleMovement);
-        } else if (state == 11)
+        } else if (state >= 11)
         { // set immediately
             PlayerPowerupInventory inventory = Player.GetComponent<PlayerPowerupInventory>();
             inventory.propelUnlocked = true;
@@ -103,6 +103,7 @@ public class MasterState : MonoBehaviour
                             a.Talkitiveness = Talkitiveness.Reluctant;
                             a.Visible = true;
                             a.ActiveTree = 4;
+                            Debug.Log(a.ActiveTree);
                         }
                         else if (state == 5)
                         {
@@ -123,7 +124,7 @@ public class MasterState : MonoBehaviour
                         }
                         break;
                     case "LibraryArchivesDoor":
-                        if (state < 4)
+                        if (state <= 4)
                         {
                             a.Talkitiveness = Talkitiveness.Talkitive;
                             a.Visible = true;
@@ -314,6 +315,8 @@ public class MasterState : MonoBehaviour
         PlayerPowerupInventory inventory = playerObject.GetComponent<PlayerPowerupInventory>();
         inventory.needleUnlocked = (state >= 3);
         inventory.propelUnlocked = (state >= 11);
+
+
     }
 
     public void PossiblyTriggerPhoneCall (Texture2D[] phoneTextures)
