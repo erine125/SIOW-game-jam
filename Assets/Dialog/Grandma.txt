@@ -91,7 +91,7 @@
 	Grandma	And yet I can feel our bonds strengthening. Whatever you're doing, dear, it's special, and I'm so proud of you.	#201411		92
 	Fern	For what? I'm not doing anything special. I'm just talking to people.	#201411		93
 	Grandma	Well, I think you've done a great job. The needles' magic is sparkling for you!	#201411	MakeReluctant	94
-	Grandma	I think I need some rest. Take some time for yourself, dear. You deserve it.	#201411	UpdateState9	
+	Grandma	I think I need some rest. Oh! Your friend Indy stopped by, said to meet them in the sewers... something about where you guys used to hang out? I remember you two climbing down the manhole uptown...	#201411	UpdateState9	
 9	Grandma	<i>She's sleeping. She looks so much frailer than you remember.</i>	#201411		96
 	Grandma	<i>You think maybe your vision of Grandma is still that of your childhood. She was the town's hero. She could do anything. You could never live up to that.</i>	#201411		97
 	Grandma	<i>Grandma always says she's proud of you. And you wonder how she can be, when she's so strong, so capable. And you're just... you.</i>	#201411	MakeReluctant	

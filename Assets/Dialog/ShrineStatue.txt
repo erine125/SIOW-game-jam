@@ -1,2 +1,28 @@
-11	Shrine	This is a placeholder conversation. It's currently GameState11	#201411	MakeReluctant	2
-	Fern	Cool, bye!	#201411	UpdateState12	
+11	<i>Shrine</i>	<i>The shrine stands before you, bathed in light.</i>	#201411		2
+	Fern	I made it...	#201411		3
+	Fern	Maybe Indy was right. I can sense the magic here... and on the needles.	#201411		4
+	Fern	Hello? Ancestors...	#201411		5
+	Fern	What do I say? Um...	#201411		6
+	Fern	My name is Fern. I'm the granddaughter of Saffron, the current needlemancer.	#201411		7
+	Fern	...	#201411		8
+	Fern	I love to knit. I've done it since I was little. And I want to help this town.	#201411		9
+	Fern	...	#201411		10
+	Fern	I know I haven't trained. There's so much I haven't learned. So many stitches, so many techniques...	#201411		11
+	Fern	But look! I made the climb. I used the needles...	#201411		12
+	Fern	I solved some problems in the town. I'm helping maintain the threads of fate... Even though I'm not really sure how they work.	#201411		13
+	Fern	But I'm trying. I'm trying as hard as I can. And if you choose me, I'm going to work so hard, and learn so much more...	#201411		14
+	<i>Shrine</i>	<i>The shrine stares back at you in silence.</i>	#201411		15
+	Fern	...	#201411		16
+	Fern	Look... I know I'm not the perfect candidate. Far from it. Even a day ago I had no clue I was going to do this...	#201411		17
+	Fern	But my grandma's sick. If you don't choose me now, who's going to help everyone?	#201411		18
+	Fern	So please.	#201411		19
+	Fern	...	#201411		20
+	<i>Shrine</i>	<i>It's eerily silent here at the summit.</i>	#201411		21
+	Fern	Hello?	#201411		22
+	Fern	...	#201411		23
+	Fern	God, why did Grandma and Indy make me think I could do this?	#201411		24
+	Fern	This is so stupid!	#201411		25
+	Fern	They were wrong. I was right. I can't do this. 	#201411		26
+	Fern	Why am I trying when I know I'll just fail? Every time...	#201411		27
+	Fern	And now it's so much worse, because I have to tell them...	#201411	MakeQuiet	28
+	Fern	That they placed their confidence in the wrong person. 	#201411	UpdateState12	

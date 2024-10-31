@@ -1,3 +1,29 @@
-12	Indy	This is a placeholder conversation. It's currently GameState12	#201411		2
-	Ginger	this is the last conversation of the game!	#201411		3
-	Fern	wow all my besties are here! the game is over. good job!	#201411	UpdateState13	
+12	Indy	Fern? Are you alright?	#201411		2
+	Fern	Indy? Everyone? What are you all doing here?	#201411		3
+	Fern	And how did you get up here?	#201411		4
+	Indy	We took the tram... How did <i>you</i> get up here?	#201411		5
+	Fern	I climbed... I used the magic needles. I thought... I thought I could do it, but...	#201411		6
+	Fern	The ritual failed. Nothing happened.	#201411		7
+	Fern	I... I failed.	#201411		8
+	Fern	I'm not going to be the next needlemancer. I'm sorry, everyone.	#201411		9
+	Indy	What do you mean? Just now you were so sure. Why do you need some ritual to prove it to yourself?	#201411		10
+	Fern	But the shrine -- my grandma said --	#201411		11
+	Indy	Who cares about the shrine? Look, everyone's here. You brought us all closer together. Isn't that the entire job?	#201411		12
+	Scarlett	Yes, and you do realize you've been doing it the entire time, right?	#201411		13
+	Fern	What?	#201411		14
+	Scarlett	Do you not know your history? Those needles would never work for you if you weren't worthy of wielding them. You might have thought you weren't doing any magic, but...	#201411		15
+	Fern	...	#201411		16
+	Scarlett	Besides, that ritual is a total fairytale. The ancestors of Purl Coast aren't buried here; they're buried in the graveyard. Which you would know if you ever cracked open a history book.	#201411		17
+	Fern	Hey!	#201411		18
+	Ginger	I think the point she's trying to make, love, is that there are no ancestor spirits. There is no magic council to deem you worthy. Not here, anyway.	#201411		19
+	Fern	Then... why would Grandma send me here?	#201411		20
+	Indy	Well, maybe it has to do with the fact that, by the time you got up here, you proved to yourself you could.	#201411		21
+	Indy	Why prove it to anyone else?	#201411		22
+	Jasper	Yes! The real ritual was the friends you made along the way!	#201411		23
+	Ginger	Not quite, love... But it doesn't matter. Fern, you don't need magic. You have skill, patience, and a love of the craft. Isn't that enough?	#201411		24
+	Scarlett	You might not know the difference between a knit and a purl, but you cared enough to keep going.	#201411		25
+	Jasper	Are you feeling better now? If not, I have cream puffs waiting for you! My new recipe!	#201411		26
+	Indy	See? Come on. Let's go home.	#201411		27
+	Indy	This is your home, right?	#201411		28
+	Fern	...	#201411		29
+	Fern	Alright. Let's go.	#201411	UpdateState13	
