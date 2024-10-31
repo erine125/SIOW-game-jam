@@ -16,6 +16,10 @@ public class PlayerJump : MonoBehaviour
 
     Animator animator;
 
+    //variables below are for playing jump sound
+    public AudioSource audioSource;
+    public AudioClip jumpClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +59,12 @@ public class PlayerJump : MonoBehaviour
                 //Note 2: Decided to reset y velocity before jumping because sometimes the y velocity isn't immediately 0 when grounded
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector3.up * jumpPower);
-                
+
+                //play jump sound effect
+                if (audioSource != null && jumpClip != null)
+                {
+                    audioSource.PlayOneShot(jumpClip);
+                }
             }
 
             //reset throwing force if player is grounded so they can propel at max force again
