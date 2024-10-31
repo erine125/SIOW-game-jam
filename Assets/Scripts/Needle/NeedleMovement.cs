@@ -8,6 +8,8 @@ public class NeedleMovement : MonoBehaviour
 {
     public float recallSpeed = 10.0f;
 
+    //public float throwSpd = 24.0f; //TODO: testing; applied force instead of setting needle to some specific speed
+
     NeedleState needleState;
 
     Rigidbody2D rb;
@@ -27,7 +29,7 @@ public class NeedleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //throw needle in its current direction
@@ -69,7 +71,9 @@ public class NeedleMovement : MonoBehaviour
 
         //reset velocity and apply force to needle accordingly
         rb.velocity = Vector3.zero;
-        rb.AddForce(throwingDirection * throwingForce);
+
+        rb.AddForce(throwingDirection * throwingForce); //this gave a speed of 24
+        //rb.velocity = throwingDirection * throwSpd;
     }
 
     //recall ability in needle
