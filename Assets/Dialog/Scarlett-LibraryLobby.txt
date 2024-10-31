@@ -1,3 +1,24 @@
-1	Scarlett	Can I help you?	#005500		2	
-	Fern	Hey girl can i go into the archives	#005500		3	
-	Scarlett	ok sexy mwah	#005500	UpdateState5		
+1	Scarlett	Can I help you?	#201411		2	
+	Fern	Um... sorry, I was just looking around.	#201411		3	
+	Scarlett	Then don't bother me. I'm busy.	#201411	MakeReluctant		
+4	Scarlett	What? I'm busy.	#201411		5	
+	Fern	You're Scarlett, right? I'm Fern. 	#201411		6	
+	Scarlett	Keep your voice down in the library. 	#201411		7	
+	Fern	...Sorry.	#201411		8	
+	Fern	I didn't realize I was being loud.	#201411		9	
+	Scarlett	Of course you didn't. It's a delicate ecosystem I'm managing here. I don't expect you to understand. 	#201411		10	
+	Fern	Um... okay, look --	#201411		11	
+	Scarlett	What do you need? A file? Archives? Reference material? If you want to use the computers, there's a waitlist, so you'd better come back tomorrow. 	#201411		12	
+	Fern	No, I --	#201411		13	
+	Scarlett	If not, don't bother me. I have actual work to do. 	#201411		14	
+	Fern	Wait.	#201411		15	
+	Fern	My grandma sent me. Saffron? She was too sick to come, so...	#201411		16	
+	Scarlett	So what? Are you saying you're taking her place? 	#201411		17	
+	Fern	No, of course not!	#201411		18	
+	Fern	More of a… substitute needlemancer. Just keeping things in line until she gets better. She asked me to. I'm not trying to overstep.	#201411		19	
+	Scarlett	That's funny. Are you even qualified to be her substitute? Do you even know how the difference between a knit and purl? How to cast on a sock invisibly? Which increase stitch to use in each context?	#201411		20	
+	Fern	Hey! I know the difference between a knit and a purl. I literally grew up on Purl Lane!	#201411		21	
+	Scarlett	Growing up somewhere doesn't mean you know how things work... especially when you haven't been here in years. And a knit and purl aren't fundamentally different in result -- the difference lies in how you approach the stitch. If you don't even know that, I don’t see what place you have prancing around with those magic needles.	#201411		22	
+	Fern	Look, you're right. I don't know everything. In fact, I don't know much of anything. But my grandma told me to come here and help you, and she's sick, and I just…	#201411		23	
+	Scarlett	Help me? Is that a joke? I'm singlehandedly running the largest repository of knowledge on this side of the Purl Sea, and who even <i>are</i> you? 	#201411		24	
+	Scarlett	I don't have time for your games. I'll be in the Archives. DON'T follow me. 	#201411	UpdateState5		

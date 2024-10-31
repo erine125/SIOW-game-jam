@@ -59,7 +59,7 @@ public class SpeechTree
 
 	private static void GetChildrenForNode (SpeechNode node, string[][] splitLines, int depth)
 	{
-		if (depth > 16)
+		if (depth > 120)
 		{
 			Debug.LogWarning("ERROR - Too deep while creating speech tree");
 			return;
