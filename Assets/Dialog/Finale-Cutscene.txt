@@ -1,0 +1,3 @@
+12	Indy	This is a placeholder conversation. It's currently GameState12	#201411		2
+	Ginger	this is the last conversation of the game!	#201411		3
+	Fern	wow all my besties are here! the game is over. good job!	#201411	UpdateState13	

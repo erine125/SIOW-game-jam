@@ -57,6 +57,10 @@ public class MasterState : MonoBehaviour
 
     public void UpdateState (int state)
     {
+        if (state == 13)
+        {
+            SceneManager.LoadScene("TitleScreen");
+        }
         this.state = state;
 
         if (state == 3)
@@ -304,13 +308,13 @@ public class MasterState : MonoBehaviour
                         }
                         break;
                     case "ShrineStatue":
-                        a.Talkitiveness = state >= 11 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
-                        a.Visible = state >= 11;
+                        a.Talkitiveness = state == 11 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = state == 11;
                         a.ActiveTree = 11;
                         break;
                     case "MountainNPCs":
-                        a.Talkitiveness = state >= 12 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
-                        a.Visible = state >= 12;
+                        a.Talkitiveness = state == 12 ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = state == 12;
                         a.ActiveTree = 12;
                         break;
                     case "NeedlesAttic":
@@ -327,6 +331,11 @@ public class MasterState : MonoBehaviour
                         a.Talkitiveness = (state == 0) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
                         a.Visible = (state == 0);
                         a.ActiveTree = 0;
+                        break;
+                    case "Finale-Cutscene":
+                        a.Talkitiveness = (state == 12) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
+                        a.Visible = (state == 12);
+                        a.ActiveTree = 12;
                         break;
                     case "NeedlesPickup":
                         a.Talkitiveness = (state == 2) ? Talkitiveness.Reluctant : Talkitiveness.Quiet;

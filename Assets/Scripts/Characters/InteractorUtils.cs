@@ -21,6 +21,7 @@ public static class SpeechUtil
         {
             int number = int.Parse(code.Substring(11));
             MasterState.Get().UpdateState(number);
+            Debug.Log(number);
         }
         else
         {
