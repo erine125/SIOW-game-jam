@@ -11,7 +11,7 @@
 	Jasper	Oh, no, this happens all the time.	#201411		12	
 	Ginger	Stop saying that! No, everything's fine. We were just having a little disagreement. Can I help you get something?	#201411		13	
 	Jasper	Right, just pretend it's not happening. That's going to help.	#201411		14	
-	Fern	Uh... I'm Fern, Saffron's daughter? My grandma sent me... 	#201411		15	
+	Fern	Uh... I'm Fern, Saffron's granddaughter? My grandma sent me... 	#201411		15	
 	Jasper	I suppose you're here to tell Ginger she's being ridiculous?	#201411		16	
 	Ginger	Or to tell him he needs to step it up!	#201411		17	
 	Fern	Um... No. Maybe it's not my place, but... do you guys really fight all the time?	#201411		18	

@@ -94,6 +94,11 @@ public class MasterState : MonoBehaviour
                 Debug.Log(a.Name);
                 switch (a.Name)
                 {
+                    case "UptownManhole":
+                        a.Visible = state >= 9;
+                        a.Talkitiveness = (state >= 9) ? Talkitiveness.Reluctant : Talkitiveness.Quiet;
+                        a.ActiveTree = 0;
+                        break;
                     case "BoatRandos":
                         a.Talkitiveness = (state == 0) ? Talkitiveness.Talkitive : Talkitiveness.Quiet;
                         a.Visible = state == 0;
